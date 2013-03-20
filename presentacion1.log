@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=pdflatex 2013.3.20)  20 MAR 2013 01:59
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=pdflatex 2013.3.20)  20 MAR 2013 15:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -944,10 +944,7 @@ Package babel Info: Making > an active character on input line 644.
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 12.
 
-(./presentacion1.aux
-LaTeX Info: Redefining \. on input line 25.
-LaTeX Info: Redefining \% on input line 25.
-)
+(./presentacion1.aux)
 \openout1 = `presentacion1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -1140,28 +1137,46 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 TI.jpg>]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: $*$ on input line 45.
+             The label is: $*$ on input line 47.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 45.
+LaTeX Font Info:    Try loading font information for U+msa on input line 47.
 (c:/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 45.
+LaTeX Font Info:    Try loading font information for U+msb on input line 47.
 
 (c:/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <8> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 45.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 47.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <6> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 45.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 47.
 
 [2
 
+] [3
+
 ]
+
+LaTeX Warning: File `empresas ipv6 la.png' not found on input line 68.
+
+<empresas ipv6 la.png, id=102, 388.45125pt x 292.09125pt>
+File: empresas ipv6 la.png Graphic file (type png)
+
+<use empresas ipv6 la.png>
+Package pdftex.def Info: empresas ipv6 la.png used on input line 68.
+(pdftex.def)             Requested size: 331.70248pt x 249.41339pt.
+
+Overfull \vbox (47.13858pt too high) detected at line 68
+ []
+
+[4
+
+ <./empresas ipv6 la.png>]
 \tf@nav=\write6
 \openout6 = `presentacion1.nav'.
 
@@ -1171,14 +1186,14 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <6> not available
 \tf@snm=\write8
 \openout8 = `presentacion1.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 47.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 47.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 70.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 70.
  (./presentacion1.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 47.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 47.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 70.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 70.
 Package rerunfilecheck Info: File `presentacion1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1186,13 +1201,13 @@ Package rerunfilecheck Info: File `presentacion1.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 47.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 70.
  ) 
 Here is how much of TeX's memory you used:
- 16383 strings out of 493481
- 301020 string characters out of 3144419
- 380378 words of memory out of 3000000
- 19275 multiletter control sequences out of 15000+200000
+ 16397 strings out of 493481
+ 301205 string characters out of 3144419
+ 381379 words of memory out of 3000000
+ 19284 multiletter control sequences out of 15000+200000
  13765 words of font info for 51 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,17n,53p,424b,563s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1202,10 +1217,10 @@ xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/201
 ist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2012/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2012/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmsy10.pfb>
-Output written on presentacion1.pdf (2 pages, 156442 bytes).
+Output written on presentacion1.pdf (4 pages, 185339 bytes).
 PDF statistics:
- 97 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 153 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
+ 9 named destinations out of 1000 (max. 500000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
