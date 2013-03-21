@@ -38,8 +38,8 @@
 
 \begin{enumerate}[$*$]
 
-	\item cupo limitado de direcciones asignables
-	\item falta de garant\'ias de seguridad,confiabilidad,movilidad y autenticidad
+	\item Cupo limitado de direcciones asignables
+	\item Falta de garant\'ias de seguridad,confiabilidad,movilidad y autenticidad
 	\item Estos elementos podian incluirse mediante parches , pero a\'un as\'i no garantizaban el pleno desempeño de los mismos
 	\item Si bien ipv4 posee un sistema de "servicios diferenciados"\footnote[1]{Diffserv: servicio que analiza varios flujos de datos en vez de conexiones únicas o reservas de recursos } no se garantizaba una calidad de servicio necesaria para cubrir la demanda actual en el mercado
 \end{enumerate}
@@ -50,8 +50,8 @@
 \begin{frame}
 \frametitle{¿Qué es IPv6?}
 
-Es la version 6 del protocolo de internet.La evolucion del IPv4 y es un protocolo que soporta mas direcciones ($2^{128}$).
-\par Al haber una cantidad de direcciones casi inagotable , se solucionan problemas de direccionamiento y no son necesarias técnicas como el NAT\footnote[1]{NAT (Network Address Translation - Traducción de Dirección de Red) es un mecanismo utilizado por routers IP para intercambiar paquetes entre dos redes que se asignan mutuamente direcciones incompatibles} para proporcionar conectividad a todos los ordenadores/dispositivos de nuestra red.
+Es la version 6 del protocolo de internet.La evolucion del IPv4 y es un protocolo que soporta mas direcciones ($2^{128}$).\vspace{0.3cm}
+\par Se solucionan problemas de direccionamiento y no son necesarias técnicas como el NAT\footnote[1]{NAT (Network Address Translation - Traducción de Dirección de Red) es un mecanismo utilizado por routers IP para intercambiar paquetes entre dos redes que se asignan mutuamente direcciones incompatibles} para proporcionar conectividad a todos los ordenadores/dispositivos de nuestra red.
 
 \end{frame}
 %4
@@ -72,8 +72,8 @@ Es la version 6 del protocolo de internet.La evolucion del IPv4 y es un protocol
 
 	\item Mayor espacio de direccionamiento
 	\item IPv6  incluye IPsec, que permite autenticación y encriptación del propio protocolo base
-	\item Ipv6 tiene una funcion de autoconfiguración en el protocolo base y de descubrir automáticamente el camino a internet(router discovery)
-	\item una característica obligatorias de IPv6 es la posibilidad de conexión y desconexión de nuestro ordenador de redes IPv6
+	\item Ipv6 tiene una función de autoconfiguración en el protocolo base y de descubrir automáticamente el camino a internet\footnote[1]{router discovery}
+	\item Una característica obligatoria de IPv6 es la posibilidad de conexión y desconexión de nuestro ordenador de redes IPv6
 	% y, por tanto, el poder viajar con él sin necesitar otra aplicación que nos permita que ese enchufe/desenchufe se pueda hacer directamente.
 \end{enumerate}
 \end{frame}
@@ -82,13 +82,21 @@ Es la version 6 del protocolo de internet.La evolucion del IPv4 y es un protocol
 
 
 \begin{frame}
-	\frametitle{Transicion de ipv4 a ipv6}
-	Nunca se pensó que internet fuera a tener un crecimiento tan descomunal\\ por lo tanto se empezó con un protocolo sencillo con una cantidad de direcciones codificadas de 32 bits.
+
+\frametitle{Transicion de ipv4 a ipv6}
+
+\begin{enumerate}[$*$]
+	
+	\item Se empezó con un protocolo sencillo con una cantidad de direcciones codificadas de 32 bits.
+	 %Nunca pensaron que internet iba a tener un crecimiento tan descomunal
 	%, de las cuales un grupo estaba reservado por paises como japon, eso acotaba aún mas la cantidad de direcciones disponibles.Nunca se llegó a usar toda la reserva de direcciones , así como tampoco se devolvieron los sobrantes
-	\par Cada vez mas dispositivos empezaron a incluir servicios de conexión a internet y cada vez había mas tráfico de datos en la red. 
+	\item Cada vez mas dispositivos empezaron a incluir servicios de conexión a internet
+	% y cada vez había mas tráfico de datos en la red.\vspace{0.2cm}
 	%,entonces  se empiezan a contemplar otros factores como por ejemplo, la seguridad y el aumento de la demanda.
-	\par Desde hace tiempo se ha estado trabajando en el protocolo ipv6 pero el problema radica en la transicion de un protocolo a otro, es un proceso que se hara de forma progresiva.
+	\item Desde hace tiempo se ha estado trabajando en el protocolo ipv6.\\ El problema radica en la transicion de un protocolo a otro, es un proceso que se hará de forma progresiva.
 	%ciertas regiones latinoamerica todavía no tienen ipv6 configurado 
+\end{enumerate}
+
 \end{frame}
 
 %4
