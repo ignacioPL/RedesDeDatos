@@ -4,6 +4,8 @@
 %\usepackage{amsmath}
 %\usepackage{amsfonts}
 %\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{float}
 \usepackage{hyperref}
 \usepackage[pdftex]{graphicx}
 \usepackage{fancyhdr}
@@ -15,6 +17,8 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \author{Ignacio Perez Laborda}
+
+\renewcommand{\thefootnote}{\roman{footnote}}
 
 \hypersetup{pdfborder = {0 0 0}}
 
@@ -29,8 +33,61 @@
 \newpage
 
 \section{¿Que es IP?}
+\subsection{Introducción Histórica}
+En plena guerra fría para fines de los años sesenta, el Departamento de Defensa (DoD) norteamericano
+necesitaba de un nuevo método para conectar sus distintos centros de investigación y centros 
+gubernamentales y que además pueda ser extendida a otros medios de propagación. Esta responsabilidad 
+cayo en manos de de ARPA(Advanced Research Projects Agency), la cual en la
+reunión de la ACM de 1967 se diseño su estructura básica y se la nombro ARPANET. Para el año 
+siguiente se realizaron las primeras adjudicaciones para la implementación de una red de conmutación
+de paquetes con una velocidad de 50kbps\footnote{kilobits por segundo}. Dicha implementación fue
+adjudicada a la recientemente creada BBN (Bolt Beranek and Newman), la cual fue creada para ese
+propósito.\par
+Para el año 1969 fue instalado el primer nodo de ARPANET en la Universidad de California en Los
+Angeles seguida por los nodos de Stanford, Santa Barbara y la Universidad de Utah. Con estos cuatro
+nodos se dio inicio a la red que al cabo de dos años ya se había expandido por todo USA y dos años
+después cruzaría el atlántico para desembarcar en Europa.\par
+Corriendo el año 1974 ARPANET ya necesitaba de un nuevo protocolo ya que el usado hasta el momento, 
+llamado NCP (Network Control Protocol) mostraba muchas falencias al crecer tanto la red. La solución
+vino de la mano de un paper que publico Vinton Cerf y Robert Kahn. Este protocolo fue el 
+TCP(Transmission Control Protocol), pero este tambien se enfrento a ciertos problemas y 
+restricciones.
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+  \includegraphics[width=0.48\textwidth]{historiaTCPIP.png}
+ \caption[Historia de TCP/IP]{Linea temporal de TCP/IP}
+\vspace{-15pt}
+\end{wrapfigure}
+Para el año 1978 se decidió dividir las responsabilidades entre un par de protocolos; el nuevo IP
+(Internet Protocol) que se encargaría de enrutar los paquetes y comunicaciones de dispositivo a 
+dispositivo, y TCP para la comunicación confiable de host a host. Aunque son dos protocolos que 
+trabajan en capas distintas fueron pensados para operar en conjunto dentro de un conjunto, por eso
+comúnmente se los denomina TCP/IP. La version actual, numero 4, del susodicho protocolo y de la cual
+hablaremos mas adelante fue especificada en el año 1979.\par
+Ya en la siguiente década ARPANET migro completamente a TCP/IP por mandato del Departamento de 
+Defensa. En ese mismo año 1983 la red fue divida en dos ARPANET que siguió con su alcance original y
+MILNET donde se desempeñarían las comunicaciones militares. Pero otra gran suceso de ese año fue la
+inclusión del protocolo en el UNIX de la Universidad de Berkeley, el BSD 4.2.\par
+Saltando tres años situándonos en 1986, la National Science Foundation construyo lo que serian los
+cimientos de la internet que conocemos al financiar la construcción de una red para la conexión de
+sus supercomputadoras. Esto gracias a la apertura de la NSF permitió a particulares conectarse a 
+dicha red lo cual ayudo a su gran crecimiento, todo esto estaba y esta apoyado por el TCP/IP. Esta 
+red existió hasta el año 1993, para ese entonces se era lo suficientemente maduro y rentable como 
+para ser comercial y ya existían empresas dispuestas y con el conocimiento para llevarlo a cabo. Se 
+puso en marcha un plan al año siguiente para reducir la influencia de la NFS y aumentar la 
+rentabilidad de los incipientes ISP\footnote{Internet Service Provider} privados.\par
+Mientras tanto el DoD y el gobierno norteamericano eligieron adoptar el modelo OSI y se pensó que
+esto supondría el fin del modelo TCP/IP, incluso el gobierno llego a obligar su uso masivo, pero
+TCP/IP siguió evolucionando sobre el fundamento de la practica y su calidad de estándar abierto.\par
+Lo que nos puede dejar esta muy resumida historia del protocolo es que la internet no tiene un claro
+inventor ni un destino claro, sino fue el trabajo en conjunto de varias personas e instituciones las
+cuales querían solucionar sus problemas de comunicación. Fue gracias a las soluciones abiertas las
+cuales permitió el mejoramiento por los usuarios, también los niveles de abstracción que se 
+permitieron hizo realidad que varias tecnologías puedan convivir en armonía. Esta filosofía abierta
+tan característica y que ha marcado tanto a la industria puede resumirse en el lema de la IETF\footnote{Internet Engineering Task Force}, expresado por David Clark: "Nosotros rechazamos reyes, presidentes y votaciones. Nosotros creemos en el consenso y en el código funcional".
 
-\section{El estandar IPv4}
+
+\section{El estándar IPv4}
 
 \section{Porque abandonar IPv4}
 Uno de los mayores problemas que presenta IPv4 es su tamaño, el cual ya ha quedado chico para los
@@ -47,12 +104,17 @@ a internet y la entrada de los grandes mercados emergentes del BRIC (Brasil, Rus
 \newpage
 \begin{thebibliography}{9}
 %esta se pone de ejemplo de como se deben hacer las bibliografias, despues se debe borrar
-\bibitem{wnaReport1}
-  WNA
-  \emph{Comparison of Lifecycle Greenhouse Gas Emissions of Various Electricity Generation Sources}.
-  London, UK,
-  2011.
+\bibitem{TaoIETF}
+  Paul Hoffman
+  \emph{The Tao of IETF: A Novice's Guide to the Internet Engineering Task Force}.
+  USA,
+  2012.
 		
+\bibitem{historyTCPiP}
+  Gary C. Kessler
+  \emph{An Overview of TCP/IP Protocols and the Internet}.
+  USA,
+  9 Nov 2010.
 		
 \bibitem{poolIPv4}
  nro.net
