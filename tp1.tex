@@ -50,7 +50,7 @@ después cruzaría el atlántico para desembarcar en Europa.\par
 Corriendo el año 1974 ARPANET ya necesitaba de un nuevo protocolo ya que el usado hasta el momento, 
 llamado NCP (Network Control Protocol) mostraba muchas falencias al crecer tanto la red. La solución
 vino de la mano de un paper que publico Vinton Cerf y Robert Kahn. Este protocolo fue el 
-TCP(Transmission Control Protocol), pero este tambien se enfrento a ciertos problemas y 
+TCP(Transmission Control Protocol), pero este también se enfrento a ciertos problemas y 
 restricciones.
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
@@ -84,7 +84,49 @@ inventor ni un destino claro, sino fue el trabajo en conjunto de varias personas
 cuales querían solucionar sus problemas de comunicación. Fue gracias a las soluciones abiertas las
 cuales permitió el mejoramiento por los usuarios, también los niveles de abstracción que se 
 permitieron hizo realidad que varias tecnologías puedan convivir en armonía. Esta filosofía abierta
-tan característica y que ha marcado tanto a la industria puede resumirse en el lema de la IETF\footnote{Internet Engineering Task Force}, expresado por David Clark: "Nosotros rechazamos reyes, presidentes y votaciones. Nosotros creemos en el consenso y en el código funcional".
+tan característica y que ha marcado tanto a la industria puede resumirse en el lema de la 
+IETF\footnote{Internet Engineering Task Force}, expresado por David Clark: "Nosotros rechazamos 
+reyes, presidentes y votaciones. Nosotros creemos en el consenso y en el código funcional".
+
+\subsection{El Protocolo IP}
+Este protocolo se encuentra en la segunda capa del modelo TCP/IP y la tercera del OSI. El se encarga
+de transmitir los paquetes entre el origen y destino basándose en su dirección IP. Esto se logra
+encapsulando los datos y formando su propio datagrama. Dentro se tienen dos partes principales el
+encabezado y la carga, en el encabezado junto a otra metadata se coloca la dirección IP de origen y 
+la de destino. El protocolo IP debe proveer de un servicio no orientado a la conexión no confiable y 
+de mejor esfuerzo, también llamado servicio de datagramas. Esto quiere decir: no confiable, el 
+protocolo no intenta recuperar los paquetes perdidos; no orientado a la conexión, cada paquete o 
+datagrama es manejado independientemente IP desconoce si existe una secuencia lógica de envío; mejor
+esfuerzo, IP no garantiza el servicio. Todo esto lleva a que otras capas se encarguen de la perdida
+de los paquetes y solicitar su reenvío. IP también permite tres tipos de servicios: Unicast (uno a 
+uno), Multicast (uno a varios) y Broadcast (uno a todos).\par
+A continuación vemos la estructura de un datagrama de IP.
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{ipDatagram.png}
+ \caption[Paquete IP]{Paquete IP}
+\end{figure}\par
+Explicacion de los campos:\par
+\begin{description}
+
+\item[Version] representa la version del estándar actualmente es cuatro en transición a 6.
+\item[Header Length] Tamaño del encabezado en múltiplos de 4 bytes.
+\item[DS/ECN] Usado para especificar el nivel del servicio, actualmente no se usa y solo esta
+presente para dar compatibilidad retroactiva.
+\item[Identification] Identificación única del datagrama de un host, se incremente con cada 
+datagrama.
+\item[Flags] El primero siempre queda en cero, los otros dos indican si se fragmenta o tiene varios
+fragmentos.
+\item[TTL] Especifica la cantidad de caminos que puede tomar un paquete hasta que se lo descarte, se
+utiliza para prevenir que el paquete quede para siempre dentro de un ciclo.
+\item[Protocol] Especifica el numero del protocolo superior.
+\item[Header Checksum] El checksum del header.
+\item[Options] Restricciones de seguridad, registro de ruta(se agrega la dirección del router por el 
+que pasa), marca de tiempo (por cada paso por router) y lista de rutas a pasar (por los únicos que 
+puede pasar o por los que debe pasar entre otros)
+\item[Padding] Se le agrega para asegurarse que tengo un tamaño de 4 bytes.
+
+\end{description}
 
 
 \section{El estándar IPv4}
@@ -103,7 +145,13 @@ a internet y la entrada de los grandes mercados emergentes del BRIC (Brasil, Rus
 
 \newpage
 \begin{thebibliography}{9}
-%esta se pone de ejemplo de como se deben hacer las bibliografias, despues se debe borrar
+
+\bibitem{redesTenem}
+  Andrew S. Tanenbaum
+  \emph{Redes de Computadoras}.
+  USA,
+  2003.
+
 \bibitem{TaoIETF}
   Paul Hoffman
   \emph{The Tao of IETF: A Novice's Guide to the Internet Engineering Task Force}.
