@@ -62,22 +62,67 @@ Es la version 6 del protocolo de internet.La evolucion del IPv4 y es un protocol
 \includegraphics[scale=0.87]{estructura_direccion.png}
 
 \end{frame}
-
 %5
+
+\begin{frame}
+ \frametitle{Arquitectura de ipv6}
+  \framesubtitle{\large{\vspace*{0,3cm}Principios de Comunicación\textbf{ Intranet}: \textbf{}}}
+   \begin{itemize}
+	\item IPv6 soporta una configuración automática integrada que dará en primer lugar una configuración sin estado y 	luego asignará el perfil indicado para cada situación
+	\item Hoy en dia las direcciones MAC tienen 48 bits de longitud, ipv6 contará con direcciones mac de 64 bits
+	\item Ipv6 cuenta con\textbf{ Neighbor Discovery} , un mecanismo para descubrir la presencia  de otros nodos en 		el mismo enlace
+	%además de ver sus direcciones IP. Este protocolo también se ocupa de mantener limpios los caches donde se 	almacena la información relativa al contexto de la red a la que está conectado un nodo, este reemplaza al address solution protocol
+	\item\textbf{ Path MTU Discover}: Servicio que permite al nodo fuente ver de antemano el tamaño del paquete 			mas grande que se puede enviar
+%asi el paquete puede ser redimensionado antes de la transmision.Direcciones locales del sitio sólo se puede utilizar para las comunicaciones dentro del sitio. para
+%comunicaciones más allá del sitio, las direcciones globales deben ser asignados con un más
+%procedimiento de configuración automática escalable.
+\end{itemize}
+\end{frame}
+
+%6
+\begin{frame}
+\frametitle{Arquitectura de ipv6}
+ \framesubtitle{\large{\vspace*{0,3cm}Principios de Comunicación\textbf{ Internet} \textbf{}}}
+  \begin{itemize}
+	\item Al no tener un estado asignado, cada nodo es responsable de configurar su propia dirección
+	%utilizando sus propias herramientas como el nd y el identificador de interfaces
+	\item Autoconfiguracion con estado: es  una configuracion que depende de servidores que almacenarán datos en 		una base de datos \textbf{DHCPv6}.Sirve para administrar grandes redes
+	%la autoconfiguración con estado proporciona
+	%mayor escalabilidad a la hora de administrar grandes redes.
+	%Autoconfiguración con estado puede ser utilizado simultáneamente con una sin estado
+
+\end{itemize}
+\end{frame}
+
+%7
+\begin{frame}
+\frametitle{Arquitectura de ipv6}
+\framesubtitle{\large{\vspace*{0,3cm}Principios de Comunicación Internet:\textbf{Red con estado}}}
+
+Para entrar a una red de este tipo se debe enviar una solicitud de escucha a un servidor DHCPv6.Las ventajas de este tipo de conexión son
+\begin{itemize}
+	\item Control de distribucion y asignación
+	\item Establecimiento de una jerarquía de direcciones
+	\item Una fácil renumeración de las direcciones ante el cambio del proveedor de internet
+	\item Se puede ejecutar un sistema con registro de host DHCPv6.
+\end{itemize}
+\end{frame}
+
+%8
 \begin{frame}
 \frametitle{Ventajas del IPv6}
 
 \begin{enumerate}[$*$]
 
 	\item Mayor espacio de direccionamiento
-	\item IPv6  incluye IPsec, que permite autenticación y encriptación del propio protocolo base
+	\item IPv6  incluye \textbf{IPsec}, que permite autenticación y encriptación del propio protocolo base
 	\item IPv6 tiene una función de autoconfiguración en el protocolo base y de descubrir automáticamente el camino a internet\footnote{router discovery}
 	\item Una característica obligatoria de IPv6 es la posibilidad de conexión y desconexión de nuestro ordenador de redes IPv6
 	% y, por tanto, el poder viajar con él sin necesitar otra aplicación que nos permita que ese enchufe/desenchufe se pueda hacer directamente.
 \end{enumerate}
 \end{frame}
 
-%6
+%9
 \begin{frame}
 
 \frametitle{Transicion de IPv4 a IPv6}
@@ -96,12 +141,15 @@ Es la version 6 del protocolo de internet.La evolucion del IPv4 y es un protocol
 
 \end{frame}
 
-%4
+%10
 \begin{frame}
 \frametitle{Algunas empresas latinoamericanas que utilizan IPv6}
 
 \includegraphics[height=1\textheight]{empresas_ipv6_la.png}
 
 \end{frame}
+
+
+
 
 \end{document}
