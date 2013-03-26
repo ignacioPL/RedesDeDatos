@@ -140,6 +140,37 @@ Esto se ve mas limitante con la llegada masiva de los dispositivos mobiles, los 
 a internet y la entrada de los grandes mercados emergentes del BRIC (Brasil, Rusia, India, China).
 
 \section{La llegada de IPv6}
+Principalmente internet era un prototipo que se hizo con un protocolo sencillo , nunca se creyo que tuvisese un crecimiento tan descomunal como para que en el futuro surgieran problemas tales como la seguridad entre el tráfico de datos a traves de la red , y la implementación de internet en otras tecnologías como  por ej celulares.Los problemas que hicieron inadecuada la version 4 de ip hicieron que se cambiara el sistema por completo por lo tanto los desarrolladores fueron forzados a crear un protocolo que resolviera los problemas actuales y trabajara diligentemente para asegurar que estos problemas no se encontraran nunca mas .Los desarrolladores del protocolo trabajaron diez años pero su implementación se hizo recientemente, es la implementación de un nuevo protocolo, escalable, ilimitado y con una gran proyeccion a futuro.\par
+
+\section{Los Beneficios de IPv6}
+Entre los principales beneficios de IPv6 fue la solucion a dos problemas fundamentales que tenia su protocolo antecesor: la falta de direcciones, y la escalabilidad de la ruta.Las soluciones implementadas fueron:
+\begin{itemize}
+\item Incremento de las direcciones IP
+\item Desarrollo en la jerarquía de direcciones
+\item Organización en los perfiles de red
+\item Autoconfiguracion sencilla de la red
+\item Mejora en la escalabilidad del enrutamiento
+\item Enrutamiento a la mejor dirección posible(Anycast)
+\item Mejoras en la seguridad
+\item Mejoras en la movilidad
+\item Se agregan nuevas tecnologías que mejoran la performance del protocolo
+
+\end {itemize}
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{comparativo_ip.png}
+\end{figure} \par
+\subsection{Jerarquía de Direcciones}
+IPv6 divide las direcciones en distintos ambitos definidos o limites en los cuales se delegan las direcciones , por lo que soluciona problemas de disagregacion.Cuenta con un sistema de enrutamiento que permite discernir rapidamente el tipo de paquete que es, asi el enrutamiento se realiza de una forma mas sencilla y eficiente.
+Otra de las herramientas que cabe destacar en IPv6 es el agregador de nivel superior \textbf{Top Level Aggregator (TLA)} que consta de dos propositos: el primero es la designacion de un gran bloque de direcciones compuesto por pequeños bloques que tienen la funcion de dar una conectividad descendiente a los que necesitan acceso a la red.El segundo es la detección de la ruta de origen,resulta mas claro ver quienes son los que tienen bloques de direcciones de proveedores y quienes son los que tienen una direccion local.Esto aumenta la eficiencia del nucleo de internet porque al agruparse de esta forma y haber una mejor organización de las direcciones , es mucho mas claro el pasaje de información.\par
+Otro de los organismos existentes en este protocolo es el \textbf{NLA Next Level Aggregator} que si bien es demasiado pequeño para ser clasificado como un TDA , tiene una cadena principal regional extensa y cuenta con un numero de pequeños clientes.Sirve para dentro del gran bloque que proporciona el TDA , romper su porcion de direcciones y delegar las direcciones obtenidas a los \textbf{Sitios Agregadores de Servicio SLA}.Estos SLA se encargan de identificar subnets que no esten en el sitio.Otro beneficio importante que se puede destacar del NLA se relaciona con la estabilidad de ruta actual de todas las rutas a nivel mundial dejando de lado las inestabilidades conocidas como cortes,fallo en enlaces  y lentitud en el tráfico de datos.Debido a esta inestabilidad,  el concepto de "route dampening" surgió y trabaja de la siguiente forma: cada vez que una ruta se retira y se reanuncia , se le asigna una penalizacion que se mantiene hasta el lugar donde se encuentra la inestabilidad que por lo general suele ser una frontera exterior o  protocolo de puerta de enlace.Mientras mas alta sea la inestabilidad, mas alta será la penalidad asociada con la ruta.Cuando esa penalización alcanza cierto nivel, la ruta se retira y debe someterse a un período de espera.Mientras mas tiempo pasa , la pena va decreciendo hasta que la misma se disuelve y vuelve a estar permitida y se la reinserta en la tabla  de BGP del router.El propósito de esto es proveer una forma de negociar las inestabilidades de una forma tal que se minimice el costo de otros procesos que son importantes.\par
+Cabe destacar que otro beneficio importante de la agregación la mejora importante en el enrutamiento, que forma parte de un requisito fundamental en IPv6.Así como hay mas direcciones tambien hay extensas ramificaciones y formas de organizarlas y controlarlas para que la asignacion de las mismas  no sea un problema.
+\subsection{Un mecanismo de direccionamiento  mas sencillo}
+
+El modelo IPv6 esta  caracterizado por tener  una direccion de 128.Los primeros 64 bits estan destinados a la numeracion de red y los ultimos 64 se utilizan para la numeracion del host, al tener 128 bits es mucho mas variada la cantidad de direcciones que se pueden formar  y tambien aumenta la seguridad de la red.Debemos recordar que los ultimos 64 btis del id del host se obtienen a partir de las direcciones mac de la red de interfaz.Por convencion la primera direccion se da normalmente al enrutador designado y el resto de las direcciones se asignan a los host de la subred con el ultimo domicilio.En IPv6 es un tanto diferente ya que  sabemos que la id es una direccion  de 64 bits que se obtiene de la direccion mac.Hoy en dia las direcciones MAC son de 48 bits , para llegar a 64 bits se las rellena con cadenas cadenas 0xff y 0xFE (: FF: FE: en términos IPv6) para cubrir la diferencia que existe entre la direccion MAC de la identificación de la companía y el ID proporcionado por el proveedor de la MAC.\par
+%El conflicto reside en si es necesario que las direcciones MAC tengan que cambiar su longitud  solo porque con el protocolo IPv6 cambia las longitudes del direccionamiento,si la necesidad de implementar direcciones MAC tan largas 
+
+
 \section{Implementar IPv6}
 \section{Desarrollo a futuro}
 
@@ -168,7 +199,13 @@ a internet y la entrada de los grandes mercados emergentes del BRIC (Brasil, Rus
  nro.net
  \emph{Free Pool of IPv4 Address Space Depleted.} 
  19 Mar 2013\\
-	\url{https://www.nro.net/news/ipv4-free-pool-depleted}		
+	\url{https://www.nro.net/news/ipv4-free-pool-depleted}	
+
+\bibitem{IPv6 Architecture}
+
+ \emph{Introduction to IPv6 Architecture} 
+
+	\url{http://www.cu.ipv6tf.org/literatura/sample.pdf}		
 		
 \end{thebibliography}
 
