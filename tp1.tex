@@ -140,10 +140,20 @@ Esto se ve mas limitante con la llegada masiva de los dispositivos mobiles, los 
 a internet y la entrada de los grandes mercados emergentes del BRIC (Brasil, Rusia, India, China).
  
 \section{La llegada de IPv6}
-Principalmente internet era un prototipo que se hizo con un protocolo sencillo , nunca se creyo que tuvisese un crecimiento tan descomunal como para que en el futuro surgieran problemas tales como la seguridad entre el tráfico de datos a traves de la red , y la implementación de internet en otras tecnologías como  por ej celulares.Los problemas que hicieron inadecuada la version 4 de ip hicieron que se cambiara el sistema por completo por lo tanto los desarrolladores fueron forzados a crear un protocolo que resolviera los problemas actuales y trabajara diligentemente para asegurar que estos problemas no se encontraran nunca mas .Los desarrolladores del protocolo trabajaron diez años pero su implementación se hizo recientemente, es la implementación de un nuevo protocolo, escalable, ilimitado y con una gran proyeccion a futuro.\par
+Principalmente internet era un prototipo que se hizo con un protocolo sencillo, nunca se creyó que 
+tuviese un crecimiento tan descomunal como para que en el futuro surgieran problemas tales como la 
+seguridad entre el tráfico de datos a través de la red, y la implementación de internet en otras 
+tecnologías como por ejemplo celulares. Los problemas que hicieron inadecuada la version 4 de IP 
+hicieron que se cambiara el sistema por completo por lo tanto los desarrolladores fueron forzados a 
+crear un protocolo que resolviera los problemas actuales y trabajara diligentemente para asegurar 
+que estos problemas no se encontraran nunca mas. Los desarrolladores del protocolo trabajaron diez 
+años pero su implementación se hizo recientemente, es la implementación de un nuevo protocolo, 
+escalable, ilimitado y con una gran proyección a futuro.\par
 
 \section{Los Beneficios de IPv6}
-Entre los principales beneficios de IPv6 fue la solucion a dos problemas fundamentales que tenia su protocolo antecesor: la falta de direcciones, y la escalabilidad de la ruta.Las soluciones implementadas fueron:
+Entre los principales beneficios de IPv6 fue la solución a dos problemas fundamentales que tenia su 
+protocolo antecesor: la falta de direcciones, y la escalabilidad de la ruta. Las soluciones 
+implementadas fueron:
 \begin{itemize}
 \item Incremento de las direcciones IP
 \item Desarrollo en la jerarquía de direcciones
@@ -158,25 +168,85 @@ Entre los principales beneficios de IPv6 fue la solucion a dos problemas fundame
 \end {itemize}
 \begin{figure}[h!]
  \centering
- \includegraphics[width=1\textwidth]{comparativo_ip.png}
+ \includegraphics[width=0.8\textwidth]{comparativo_ip.png}
 \end{figure} \par
 
 \subsection{Jerarquía de Direcciones}
-IPv6 divide las direcciones en distintos ambitos definidos o limites en los cuales se delegan las direcciones , por lo que soluciona problemas de disagregacion.Cuenta con un sistema de enrutamiento que permite discernir rapidamente el tipo de paquete que es, asi el enrutamiento se realiza de una forma mas sencilla y eficiente.
-Otra de las herramientas que cabe destacar en IPv6 es el agregador de nivel superior \textbf{Top Level Aggregator (TLA)} que consta de dos propositos: el primero es la designacion de un gran bloque de direcciones compuesto por pequeños bloques que tienen la funcion de dar una conectividad descendiente a los que necesitan acceso a la red.El segundo es la detección de la ruta de origen,resulta mas claro ver quienes son los que tienen bloques de direcciones de proveedores y quienes son los que tienen una direccion local.Esto aumenta la eficiencia del nucleo de internet porque al agruparse de esta forma y haber una mejor organización de las direcciones , es mucho mas claro el pasaje de información.\par
-Otro de los organismos existentes en este protocolo es el \textbf{NLA Next Level Aggregator} que si bien es demasiado pequeño para ser clasificado como un TDA , tiene una cadena principal regional extensa y cuenta con un numero de pequeños clientes.Sirve para dentro del gran bloque que proporciona el TDA , romper su porcion de direcciones y delegar las direcciones obtenidas a los \textbf{Sitios Agregadores de Servicio SLA}.Estos SLA se encargan de identificar subnets que no esten en el sitio.Otro beneficio importante que se puede destacar del NLA se relaciona con la estabilidad de ruta actual de todas las rutas a nivel mundial dejando de lado las inestabilidades conocidas como cortes,fallo en enlaces  y lentitud en el tráfico de datos.Debido a esta inestabilidad,  el concepto de "route dampening" surgió y trabaja de la siguiente forma: cada vez que una ruta se retira y se reanuncia , se le asigna una penalizacion que se mantiene hasta el lugar donde se encuentra la inestabilidad que por lo general suele ser una frontera exterior o  protocolo de puerta de enlace.Mientras mas alta sea la inestabilidad, mas alta será la penalidad asociada con la ruta.Cuando esa penalización alcanza cierto nivel, la ruta se retira y debe someterse a un período de espera.Mientras mas tiempo pasa , la pena va decreciendo hasta que la misma se disuelve y vuelve a estar permitida y se la reinserta en la tabla  de BGP del router.El propósito de esto es proveer una forma de negociar las inestabilidades de una forma tal que se minimice el costo de otros procesos que son importantes.\par
-Cabe destacar que otro beneficio importante de la agregación la mejora importante en el enrutamiento, que forma parte de un requisito fundamental en IPv6.Así como hay mas direcciones tambien hay extensas ramificaciones y formas de organizarlas y controlarlas para que la asignacion de las mismas  no sea un problema.
+IPv6 divide las direcciones en distintos ámbitos definidos o limites en los cuales se delegan las 
+direcciones, por lo que soluciona problemas de disgregación. Cuenta con un sistema de enrutamiento 
+que permite discernir rápidamente el tipo de paquete que es, así el enrutamiento se realiza de una 
+forma mas sencilla y eficiente.
+Otra de las herramientas que cabe destacar en IPv6 es el agregador de nivel superior \textbf{Top 
+Level Aggregator (TLA)} que consta de dos propósitos: el primero es la designación de un gran bloque 
+de direcciones compuesto por pequeños bloques que tienen la función de dar una conectividad 
+descendiente a los que necesitan acceso a la red. El segundo es la detección de la ruta de origen, 
+resulta mas claro ver quienes son los que tienen bloques de direcciones de proveedores y quienes son 
+los que tienen una dirección local. Esto aumenta la eficiencia del núcleo de internet porque al 
+agruparse de esta forma y haber una mejor organización de las direcciones, es mucho mas claro el 
+pasaje de información.\par
+Otro de los organismos existentes en este protocolo es el \textbf{NLA Next Level Aggregator} que si 
+bien es demasiado pequeño para ser clasificado como un TDA, tiene una cadena principal regional 
+extensa y cuenta con un numero de pequeños clientes. Sirve para dentro del gran bloque que 
+proporciona el TDA, romper su porción de direcciones y delegar las direcciones obtenidas a los 
+\textbf{Sitios Agregadores de Servicio SLA}. Estos SLA se encargan de identificar subnets que no 
+estén en el sitio.Otro beneficio importante que se puede destacar del NLA se relaciona con la 
+estabilidad de ruta actual de todas las rutas a nivel mundial dejando de lado las inestabilidades 
+conocidas como cortes, fallo en enlaces y lentitud en el tráfico de datos. Debido a esta 
+inestabilidad, el concepto de "route dampening" surgió y trabaja de la siguiente forma: cada vez que 
+una ruta se retira y se renuncia, se le asigna una penalización que se mantiene hasta el lugar donde 
+se encuentra la inestabilidad que por lo general suele ser una frontera exterior o  protocolo de 
+puerta de enlace. Mientras mas alta sea la inestabilidad, mas alta será la penalidad asociada con la 
+ruta. Cuando esa penalización alcanza cierto nivel, la ruta se retira y debe someterse a un período 
+de espera. Mientras mas tiempo pasa, la pena va decreciendo hasta que la misma se disuelve y vuelve 
+a estar permitida y se la reinserta en la tabla  de BGP del router. El propósito de esto es proveer 
+una forma de negociar las inestabilidades de una forma tal que se minimice el costo de otros 
+procesos que son importantes.\par
+Cabe destacar que otro beneficio importante de la agregación la mejora importante en el 
+enrutamiento, que forma parte de un requisito fundamental en IPv6. Así como hay mas direcciones 
+también hay extensas ramificaciones y formas de organizarlas y controlarlas para que la asignación 
+de las mismas  no sea un problema.
+
 \subsection{Un mecanismo de direccionamiento  mas sencillo}
-El modelo IPv6 esta  caracterizado por tener  una direccion de 128.Los primeros 64 bits estan destinados a la numeracion de red y los ultimos 64 se utilizan para la numeracion del host, al tener 128 bits es mucho mas variada la cantidad de direcciones que se pueden formar  y tambien aumenta la seguridad de la red.Debemos recordar que los ultimos 64 btis del id del host se obtienen a partir de las direcciones mac de la red de interfaz.Por convencion la primera direccion se da normalmente al enrutador designado y el resto de las direcciones se asignan a los host de la subred con el ultimo domicilio.En IPv6 es un tanto diferente ya que  sabemos que la id es una direccion  de 64 bits que se obtiene de la direccion mac.Hoy en dia las direcciones MAC son de 48 bits , para llegar a 64 bits se las rellena con cadenas cadenas 0xff y 0xFE (: FF: FE: en términos IPv6) para cubrir la diferencia que existe entre la direccion MAC de la identificación de la companía y el ID proporcionado por el proveedor de la MAC.\par
-El conflicto reside en si es necesario que las direcciones MAC tengan que cambiar su longitud  solo porque con el protocolo IPv6 cambia las longitudes del direccionamiento,si la necesidad de implementar direcciones MAC tan largas , la siguiente opcion para la longitud proporcionara mas de 1.8E019 direcciones mac en lugar de usar (264-248) si este viene a ser el
+El modelo IPv6 esta  caracterizado por tener  una dirección de 128.Los primeros 64 bits están 
+destinados a la numeración de red y los últimos 64 se utilizan para la numeración del host, al tener 
+128 bits es mucho mas variada la cantidad de direcciones que se pueden formar y también aumenta la 
+seguridad de la red. Debemos recordar que los últimos 64 bits del id del host se obtienen a partir 
+de las direcciones MAC de la red de interfaz. Por convención la primera dirección se da normalmente 
+al enrutador designado y el resto de las direcciones se asignan a los host de la subred con el 
+ultimo domicilio. En IPv6 es un tanto diferente ya que  sabemos que la id es una dirección  de 64 
+bits que se obtiene de la dirección MAC. Hoy en día las direcciones MAC son de 48 bits, para llegar 
+a 64 bits se las rellena con cadenas cadenas 0xff y 0xFE (: FF: FE: en términos IPv6) para cubrir la 
+diferencia que existe entre la dirección MAC de la identificación de la compañía y el ID 
+proporcionado por el proveedor de la MAC.\par
+El conflicto reside en si es necesario que las direcciones MAC tengan que cambiar su longitud  solo 
+porque con el protocolo IPv6 cambia las longitudes del direccionamiento, si la necesidad de 
+implementar direcciones MAC tan largas, la siguiente opción para la longitud proporcionara mas de 
+1.8E019 direcciones MAC en lugar de usar (264-248) si este viene a ser el
 caso, simplemente puede dejar el relleno de la dirección MAC, y el uso de los 64 completo
-bits de la dirección MAC para el ID de host
+bits de la dirección MAC para el ID de host.
+
 \subsection{Autoconfiguracion de direcciones}
-La mejor ventaja de ipv6 sin dudas es la capacidad de autoconfiguracion de las direcciones ip.Antes de entrar en detalles sobre el tema hablaremos de \textbf{la direccion de multidifusion}.Esta consiste en una direccion multicast que se puede asignar simultaneamente a mas de una maquina.Esta direccion envia los paquetes al grupo de equipos asignados a la misma.Todas las maquinas que estan asignadas a esa direccion se dice que  estan en un grupo multicast,cuya direccion es la direccion  de multidifusion que utilizan.Los equipos conectados envian y reciben datos desde mas de un host.Se utiliza este estilo para realizar 1 a n o m transacciones.\par
-Asociando este concepto con el de autoconfiguracion, se puede decir que una red lan es un grupo de maquinas y que cuando una nueva maquina ingresa a ese grupo , esta conectada y usan ipv6 , se le enviara a esa maquina nueva un paquete de multidifusion , este paquete se destinara a la  direccion de un ambito local.Cuando el router ve que este paquete entra , este se puede responder con la direccion de red de la maquina nueva .La respuesta recibe el paquete y a su vez , lee el numero de red que el router tiene enviado.Si se asigna una direccion de ipv6 añadiendo su ID de host.Todo este proceso no requiere ninguna intervencion manual por parte del administrador, esto asegura tambien la unicidad de la direccion , la maquina esta garantizada para tener la direccion unica , porque el numero de red exclusivamente asignado por el numero de router de esa red.
- Este mecanismo ahorra al usuario un monton de problemas tales como la configuracion manual cuando el equipo se mueve de una red a otra , la realizacion de un seguimiento de las direcciones que se ha asignado y cuales estan libres en un tiempo dado.
-Esto le da una facilidad muy grande al administrador de redes ya que no debe perder tiempo en tareas de seguimiento y en el renombramiento de la red.\par
- \newpage
+La mejor ventaja de IPv6 sin dudas es la capacidad de autoconfiguracion de las direcciones IP. Antes 
+de entrar en detalles sobre el tema hablaremos de \textbf{la dirección de multidifusion}. Esta 
+consiste en una dirección multicast que se puede asignar simultáneamente a mas de una maquina.Esta 
+dirección envía los paquetes al grupo de equipos asignados a la misma.Todas las maquinas que están 
+asignadas a esa dirección se dice que están en un grupo multicast, cuya dirección es la dirección  
+de multidifusion que utilizan.Los equipos conectados envían y reciben datos desde mas de un host. Se 
+utiliza este estilo para realizar 1 a N o M transacciones.\par
+Asociando este concepto con el de autoconfiguracion, se puede decir que una red lan es un grupo de 
+maquinas y que cuando una nueva maquina ingresa a ese grupo, esta conectada y usan IPv6, se le 
+enviara a esa maquina nueva un paquete de multidifusion, este paquete se destinara a la dirección 
+de un ámbito local. Cuando el router ve que este paquete entra, este se puede responder con la 
+dirección de red de la maquina nueva. La respuesta recibe el paquete y a su vez, lee el numero de 
+red que el router tiene enviado. Si se asigna una dirección de IPv6 añadiendo su ID de host. Todo 
+este proceso no requiere ninguna intervención manual por parte del administrador, esto asegura 
+también la unicidad de la dirección, la maquina esta garantizada para tener la dirección única, 
+porque el numero de red exclusivamente asignado por el numero de router de esa red.
+Este mecanismo ahorra al usuario un montón de problemas tales como la configuración manual cuando el 
+equipo se mueve de una red a otra, la realización de un seguimiento de las direcciones que se ha 
+asignado y cuales están libres en un tiempo dado.
+Esto le da una facilidad muy grande al administrador de redes ya que no debe perder tiempo en tareas 
+de seguimiento y en el renombramiento de la red.
 \subsection{Mejora en la Escalabilidad del Enrutamiento Multicast}
 
 
