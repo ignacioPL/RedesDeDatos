@@ -130,8 +130,57 @@ puede pasar o por los que debe pasar entre otros)
 
 
 \section{El estándar IPv4}
+\subsection{Aspectos Técnicos}
+Ahora hablaremos de la version 4 del protocolo IP, la cual se implemento para el año 1981 y es 
+actualmente el estándar global para internet.\par
+El estándar IPv4 utiliza un direccionamiento de 32-bits, lo cual da una posibilidad de tan solo 
+4.294.967.296 posibles direcciones, pero de esa problemática nos encargaremos mas adelante. Para 
+anotar las direcciones de un método que nosotros los humanos podamos entender se utiliza un sistema 
+de 4 octetos expresados en decimal y separados por un punto. Estas direcciones se dividen 
+principalmente en dos partes. Una parte la primera es para identificar al ID de la red y la parte
+restante identifica al host dentro de la red, ambas juntas como se podrá ver identifican 
+unívocamente a un equipo conectado a la red. Historicamente se han dividio las direcciones en clases
+dando a una asignacion llamada \textbf{direccionamiento con clases}. Se utilizan cinco tipos de 
+clases \emph{A, B, C, D, E}
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{clasesIP.png}
+ \caption[Clases IP]{Clases IP}
+\end{figure}\par
+Como se puede apreciar la clase A permite tener muchos hosts por red pero solo puede haber pocas 
+redes, por lo cual se utiliza para grandes redes. Además dentro de este rango entran dos direcciones 
+reservadas la 0.0.0.0 y la 127.0.0.0 la cual asigna el enlace local, hace referencia a la propia 
+interfaz de red, también existe un rango privado dentro de esta red el cual se extiende de 10.0.0.0 
+a 10.255.255.255. Esta red puede mantener hasta 16.777.214 de hosts pero solo 128 redes distintas.
+La clase B por su parte ya puede ofrecer mas redes por lo que su uso se da para redes de tamaño 
+intermedio pudiendo dar cabida a 65.534 hosts pero con un mayor numero de redes posible el cual 
+asciende a 16.384 posibles. A su vez el rango de direcciones privada se da entre 172.16.0.0 hasta 
+172.31.255.255, también en esta clase se encuentra el link local. Por ultimo tenemos a la clase C la
+que menor cantidad de hosts puede soportar, pero si pueden coexistir muchísimas redes distintas 
+específicamente 2.097.152 y tan solo 254 hosts en cada red. Por eso esta clase se reserva para redes 
+pequeñas. Su rango privado es familiar ya que la gran mayoría de routers hogareños y para pequeñas 
+empresas lo utilizan van desde 192.168.0.0 hasta 192.168.255.255. Las dos clases siguientes D y E se
+destinan para la multidifusi\'on y para usos futuros respectivamente.\par
+Dado que este sistema mostró ciertas falencias para el rápido crecimiento de las conexiones y hosts
+necesarios, se desarrollo las subredes y las mascaras de subred. La solución a este problema es 
+permitir la división de una red en varias partes para uso interno, pero aún actuar como una sola red 
+ante el mundo exterior. Esto se implementa con una mascara la cual tiene una estructura parecida a
+la de una dirección IP, un ejemplo seria una mascara donde no existe división la cual quedaría como 
+255.255.255.0, solamente el ultimo octeto queda libre para variar seria una mascara para clase C. 
+Entonces una mascara de clase A seria 255.0.0.0 y por ulitmo una de clase B se expresa 25.255.0.0. 
+La mascara permite poder identificar a la subred dentro de la red principal,pero sin que el exterior 
+note la división, por lo cual no es necesario solicitar nuevas direcciones. Por Ejemplo, al 
+introducirse subredes, se cambian las tablas de enrutamiento, agregando entradas con forma de (esta 
+red, subred, 0) y (esta red, esta subred, host). Por lo tanto, un enrutador de la subred k sabe cómo 
+llegar a todas las demás subredes y a todos los hosts de la subred k; no tiene que saber los 
+detalles sobre los hosts de otras subredes. De hecho, todo lo que se necesita es hacer que cada 
+enrutador haga un AND booleano con la máscara de subred de la red para deshacerse del número de host 
+y buscar la dirección resultante en sus tablas (tras determinar de qué clase de red se trata). Por 
+eso se puede afirmar que la división de redes reduce espacio en la tabla de enrutamiento creando una 
+jerarquía de tres niveles, que consiste en red, subred y host.
 
-\section{Porque abandonar IPv4}
+
+\subsection{Porque abandonar IPv4}
 Uno de los mayores problemas que presenta IPv4 es su tamaño, el cual ya ha quedado chico para los
 estándares actuales. Este es un numero de solo 32bits con lo cual la cantidad máxima de números
 posibles es $2^{32}$ cual da un total de 4.294.967.296 posibles dirección eso es menos de una
@@ -166,10 +215,13 @@ implementadas fueron:
 \item Se agregan nuevas tecnologías que mejoran la performance del protocolo
 
 \end {itemize}
+
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.8\textwidth]{comparativo_ip.png}
-\end{figure} \par
+ \caption[Comparativo IP]{Comparativo IP}
+\end{figure}\par
+
 
 \subsection{Jerarquía de Direcciones}
 IPv6 divide las direcciones en distintos ámbitos definidos o limites en los cuales se delegan las 
@@ -281,11 +333,13 @@ de seguimiento y en el renombramiento de la red.
 	\url{https://www.nro.net/news/ipv4-free-pool-depleted}	
 
 \bibitem{IPv6 Architecture}
-
- \emph{Introduction to IPv6 Architecture} 
-
-	\url{http://www.cu.ipv6tf.org/literatura/sample.pdf}		
-		
+ cu.ipv6ft.org 
+ \emph{Introduction to IPv6 Architecture.} 
+ 26 Mar 2013\\
+	\url{http://www.cu.ipv6tf.org/literatura/sample.pdf}
+	
+	
+				
 \end{thebibliography}
 
 \end{document}
