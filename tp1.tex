@@ -219,9 +219,8 @@ implementadas fueron:
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.8\textwidth]{comparativo_ip.png}
- \caption[Comparativo IP]{Comparativo IP}
-\end{figure}\par
-
+\caption[comparacion versiones IP]{Cuadro comparativo de las direcciones IP}
+\end{figure} \par
 
 \subsection{Jerarquía de Direcciones}
 IPv6 divide las direcciones en distintos ámbitos definidos o limites en los cuales se delegan las 
@@ -299,7 +298,61 @@ equipo se mueve de una red a otra, la realización de un seguimiento de las dire
 asignado y cuales están libres en un tiempo dado.
 Esto le da una facilidad muy grande al administrador de redes ya que no debe perder tiempo en tareas 
 de seguimiento y en el renombramiento de la red.
+
 \subsection{Mejora en la Escalabilidad del Enrutamiento Multicast}
+En este apartado ampliaremos mas el concepto de dirección de multidifusion: En los inicios de internet, los 
+problemas de congestión fueron tolerados ya que los datos que enviaban y recibían los usuarios no tenían porque 
+ser en tiempo real. Hoy, por el contrario, las empresas están utilizando internet para una amplia gama de 
+aplicaciones. Esta tendencia de tener en nuestros dispositivos de información tal como el estado del tiempo , 
+la 
+cotización de la bolsa y las noticias del día entre otros, hace que se provoque la necesidad de un nuevo tipo 
+de envío de trafico en el cual se pueda enviar 
+un conjunto de datos a muchas personas. Antiguamente se copiaba el archivo a enviar tantas veces como 
+destinatarios existían y se los enviaba a cada uno.El problema con este método es cuando se quiere difundir un 
+archivo en tiempo real de forma masiva, el ancho de banda quizás no sea lo suficientemente grande como para 
+manejar tal velocidad de datos.La idea de la multidifusion justamente es tomar ese conjunto de datos y enviarlo 
+por una dirección de multidifusion, un grupo colectivo de direcciones por ejemplo en IPv4 se utiliza el 
+intervalo de 
+224.0.0.0 a 239.255.255.255. Cuando se quiere enviar algo a múltiples destinatarios, se asigna una dirección 
+temporal del intervalo para escuchar los paquetes que llegan del origen. Este concepto nos ayuda a ahorrar 
+mucho 
+ancho de banda y velocidad de datos además de mantener una estructura de enrutamiento eficaz.\par
+En IPv6 es posible asignar ciertas secuencias de multidifusion para ser transferido dentro de un área 
+determinada y no permitir que los paquetes salgan de esa zona, los limites de envío y recepción de paquetes 
+serán bien conocidos y entendidos por todos.
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=0.7\textwidth]{formato_multicast.png}
+ \caption[Formato Multicast]{Formato de una dirección multicast en IPV6}
+\end{figure} \par
+
+En la figura de arriba podemos ver el Formato de una dirección multicast. Todos los ocho bits se establecen en 
+uno, lo que permitirá a un dispositivo de enrutamiento saber inmediatamente si el paquete es de multidifusion y 
+sujeto a la manipulación asociado con su tipo. Los siguientes cuatro bits se utilizan para los "flags": los 
+tres 
+primeros flags son reservados y no están definidos por lo que están establecidos en cero, el cuarto bit se lo 
+conoce como bit T y se utiliza para decidir si la dirección multicast es una dirección permanente o una 
+asignación temporal como se ha hablado en el párrafo anterior. Ese ultimo campo nos informara si la dirección 
+de multidifusion que se esta utilizando es la que viene de serie. El siguiente campo nos dirá hasta que punto 
+puede llegar la multidifusion, en lo que áreas de un dominio de enrutamiento de un paquete puede viajar y la 
+dirección del grupo que puede ser alcanzado. Toma los siguientes valores:\par
+%ver al final como se puede emprolijar esta imagen
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=0.8\textwidth]{valores.png}
+ \caption[Valores del campo scope]{Valores que puede tomar el campo "scope"}
+\end{figure} \par
+
+Dependiendo de como asignemos nuestra dirección multicast, podremos controlar que tan lejos viajarán los 
+paquetes. Ejemplo; no es lo mismo la difusión masiva de un vídeo a una cantidad muy grande de usuarios que la 
+difusión de un ppt a un grupo de trabajo que se encuentra dentro de la misma red LAN. Esto significa que se 
+controlará la propagación de información y que información será propagada y a quien se la enviará, por lo 
+tanto, en lugar de dejarle a un administrador de red la tarea de colocar filtros para que algunos paquetes le 
+lleguen a cierta gente y a otros no, podemos dejarle esta tarea a este mecanismo. Esto también permite una 
+fácil configuración de un nivel de privacidad y muy bien definido, que también facilita el mantenimiento del 
+mismo.
+\subsection{Dirección anycast}
 
 
 \section{Implementar IPv6}
@@ -337,9 +390,7 @@ de seguimiento y en el renombramiento de la red.
  \emph{Introduction to IPv6 Architecture.} 
  26 Mar 2013\\
 	\url{http://www.cu.ipv6tf.org/literatura/sample.pdf}
-	
-	
-				
+					
 \end{thebibliography}
 
 \end{document}
