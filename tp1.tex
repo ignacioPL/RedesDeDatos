@@ -300,62 +300,92 @@ Esto le da una facilidad muy grande al administrador de redes ya que no debe per
 de seguimiento y en el renombramiento de la red.
 
 \subsection{Mejora en la Escalabilidad del Enrutamiento Multicast}
-En este apartado ampliaremos mas el concepto de dirección de multidifusion: En los inicios de internet, los 
-problemas de congestión fueron tolerados ya que los datos que enviaban y recibían los usuarios no tenían porque 
-ser en tiempo real. Hoy, por el contrario, las empresas están utilizando internet para una amplia gama de 
-aplicaciones. Esta tendencia de tener en nuestros dispositivos de información tal como el estado del tiempo , 
-la 
-cotización de la bolsa y las noticias del día entre otros, hace que se provoque la necesidad de un nuevo tipo 
-de envío de trafico en el cual se pueda enviar 
-un conjunto de datos a muchas personas. Antiguamente se copiaba el archivo a enviar tantas veces como 
-destinatarios existían y se los enviaba a cada uno.El problema con este método es cuando se quiere difundir un 
-archivo en tiempo real de forma masiva, el ancho de banda quizás no sea lo suficientemente grande como para 
-manejar tal velocidad de datos.La idea de la multidifusion justamente es tomar ese conjunto de datos y enviarlo 
-por una dirección de multidifusion, un grupo colectivo de direcciones por ejemplo en IPv4 se utiliza el 
-intervalo de 
-224.0.0.0 a 239.255.255.255. Cuando se quiere enviar algo a múltiples destinatarios, se asigna una dirección 
-temporal del intervalo para escuchar los paquetes que llegan del origen. Este concepto nos ayuda a ahorrar 
-mucho 
-ancho de banda y velocidad de datos además de mantener una estructura de enrutamiento eficaz.\par
-En IPv6 es posible asignar ciertas secuencias de multidifusion para ser transferido dentro de un área 
-determinada y no permitir que los paquetes salgan de esa zona, los limites de envío y recepción de paquetes 
-serán bien conocidos y entendidos por todos.
+En este apartado ampliaremos mas el concepto de dirección de multidifusion: En los inicios de 
+internet, los problemas de congestión fueron tolerados ya que los datos que enviaban y recibían los 
+usuarios no tenían porque ser en tiempo real. Hoy, por el contrario, las empresas están utilizando 
+internet para una amplia gama de aplicaciones. Esta tendencia de tener en nuestros dispositivos de 
+información tal como el estado del tiempo, la cotización de la bolsa y las noticias del día entre 
+otros, hace que se provoque la necesidad de un nuevo tipo de envío de trafico en el cual se pueda 
+enviar un conjunto de datos a muchas personas. Antiguamente se copiaba el archivo a enviar tantas 
+veces como destinatarios existían y se los enviaba a cada uno. El problema con este método es cuando 
+se quiere difundir un archivo en tiempo real de forma masiva, el ancho de banda quizás no sea lo 
+suficientemente grande como para manejar tal velocidad de datos. La idea de la multidifusion 
+justamente es tomar ese conjunto de datos y enviarlo por una dirección de multidifusion, un grupo 
+colectivo de direcciones por ejemplo en IPv4 se utiliza el intervalo de 224.0.0.0 a 239.255.255.255. 
+Cuando se quiere enviar algo a múltiples destinatarios, se asigna una dirección temporal del 
+intervalo para escuchar los paquetes que llegan del origen. Este concepto nos ayuda a ahorrar mucho 
+ancho de banda y velocidad de datos además de mantener una estructura de enrutamiento eficaz \par
+En IPv6 es posible asignar ciertas secuencias de multidifusion para ser transferido dentro de un 
+área determinada y no permitir que los paquetes salgan de esa zona, los limites de envío y recepción 
+de paquetes serán bien conocidos y entendidos por todos.
 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.7\textwidth]{formato_multicast.png}
  \caption[Formato Multicast]{Formato de una dirección multicast en IPV6}
 \end{figure} \par
-
-En la figura de arriba podemos ver el Formato de una dirección multicast. Todos los ocho bits se establecen en 
-uno, lo que permitirá a un dispositivo de enrutamiento saber inmediatamente si el paquete es de multidifusion y 
-sujeto a la manipulación asociado con su tipo. Los siguientes cuatro bits se utilizan para los "flags": los 
-tres 
-primeros flags son reservados y no están definidos por lo que están establecidos en cero, el cuarto bit se lo 
-conoce como bit T y se utiliza para decidir si la dirección multicast es una dirección permanente o una 
-asignación temporal como se ha hablado en el párrafo anterior. Ese ultimo campo nos informara si la dirección 
-de multidifusion que se esta utilizando es la que viene de serie. El siguiente campo nos dirá hasta que punto 
-puede llegar la multidifusion, en lo que áreas de un dominio de enrutamiento de un paquete puede viajar y la 
+En la figura de arriba podemos ver el Formato de una dirección multicast. Todos los ocho bits se 
+establecen en uno, lo que permitirá a un dispositivo de enrutamiento saber inmediatamente si el 
+paquete es de multidifusion y sujeto a la manipulación asociado con su tipo. Los siguientes cuatro 
+bits se utilizan para los "flags": los tres primeros flags son reservados y no están definidos por 
+lo que están establecidos en cero, el cuarto bit se lo conoce como bit T y se utiliza para decidir 
+si la dirección multicast es una dirección permanente o una asignación temporal como se ha hablado 
+en el párrafo anterior. Ese ultimo campo nos informara si la dirección de multidifusion que se esta 
+utilizando es la que viene de serie. El siguiente campo nos dirá hasta que punto puede llegar la 
+multidifusion, en lo que áreas de un dominio de enrutamiento de un paquete puede viajar y la 
 dirección del grupo que puede ser alcanzado. Toma los siguientes valores:\par
-%ver al final como se puede emprolijar esta imagen
+
 \begin{figure}[h!]
  \centering
- \includegraphics[width=0.8\textwidth]{valores.png}
+ \includegraphics[width=0.71\textwidth]{valoresM.png}
  \caption[Valores del campo scope]{Valores que puede tomar el campo "scope"}
 \end{figure} \par
 
-Dependiendo de como asignemos nuestra dirección multicast, podremos controlar que tan lejos viajarán los 
-paquetes. Ejemplo; no es lo mismo la difusión masiva de un vídeo a una cantidad muy grande de usuarios que la 
-difusión de un ppt a un grupo de trabajo que se encuentra dentro de la misma red LAN. Esto significa que se 
-controlará la propagación de información y que información será propagada y a quien se la enviará, por lo 
-tanto, en lugar de dejarle a un administrador de red la tarea de colocar filtros para que algunos paquetes le 
-lleguen a cierta gente y a otros no, podemos dejarle esta tarea a este mecanismo. Esto también permite una 
-fácil configuración de un nivel de privacidad y muy bien definido, que también facilita el mantenimiento del 
-mismo.
+Dependiendo de como asignemos nuestra dirección multicast, podremos controlar que tan lejos viajarán 
+los paquetes. Ejemplo; no es lo mismo la difusión masiva de un vídeo a una cantidad muy grande de 
+usuarios que la difusión de un ppt a un grupo de trabajo que se encuentra dentro de la misma red 
+LAN. Esto significa que se controlará la propagación de información y que información será propagada 
+y a quien se la enviará, por lo tanto, en lugar de dejarle a un administrador de red la tarea de 
+colocar filtros para que algunos paquetes le lleguen a cierta gente y a otros no, podemos dejarle 
+esta tarea a este mecanismo. Esto también permite una fácil configuración de un nivel de privacidad 
+y muy bien definido, que también facilita el mantenimiento del mismo.
 \subsection{Dirección anycast}
 
 
 \section{Implementar IPv6}
+
+\subsection{Estado Actual}
+La adopción de IPv6 no se a dado tan rápidamente como sus diseñadores lo esperaban. Dado que el 
+estándar no es retro compatible con IPv4 ambos lados, tanto como clientes como servidores deben 
+implementarlo para hacer uso de el y dado que no se provee un mayor beneficio que mayor cantidad de 
+direcciones la recepción fue tibia. Sin embargo con el próximo fin de la disponibilidad de la 
+version 4, cada vez mas redes empezaron a soportar IPv6.\par
+A fines de la década pasada IPv6 a pesar de cumplir casi una década, presentaba una penetración en 
+el mercado muy baja, un revelamiento de Google demostró en 2008 que el estándar representaba menos
+del 1\%, aproximadamente 0.238\% del trafico de los países\cite{googleIPv6}.\par
+Ya adentrándonos en nuestra actual década mas precisamente Octubre 2011 la capacidad para dar un 
+servicio en IPv6 era sustancialmente mas alta llegando a un 85\% de los proveedores de internet del 
+nivel superior y el soporte global había llegado a un 12\% del total. El soporte de software también 
+se había masificado con los principales SO\footnote{Windows, Mac OSX, Linux} soportando IPv6. En ese 
+mismo año para el mes de Junio y en el día 8 la \emph{Internet Society} organizo el \textbf{World 
+IPv6 Day}. La cual fue una prueba mundial de un día de duración donde la grandes empresas 
+desplegaron sus tecnologías IPv6, la prueba fue un éxito y vio aumentada el escaso trafico de la 
+nueva version, también ayudo a mejorar los stacks duales, se implementa lado a lado IPv4 y v6. 
+Incluso algunas como facebook decidieron dejar sus servicios v6.\par
+Al año (2012) siguiente la misma sociedad organizo el \textbf{World IPv6 Launch Day}, con la 
+diferencia que esta vez el despliegue debía ser permanente y no solo por un día. Todas estas medidas 
+han logrado que el uso aumente actualmente llegando actualmente al 1.14\%. Actualmente Rumania, 
+Francia, Alemania, Japon y EE.UU. son los países con mayor adopción del protocolo con Rumania 
+llegando al 8.85\% el mas alto del mundo, en latinoamerica Peru se encuentra en la avanzada con un 
+1.1\%.
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=0.75\textwidth]{adopcionIPv6.png}
+ \caption[Adopción Global de IPv6]{Adopción Global de IPv6}
+\end{figure}
+
+
+
 \section{Desarrollo a futuro}
 
 \newpage
@@ -390,6 +420,12 @@ mismo.
  \emph{Introduction to IPv6 Architecture.} 
  26 Mar 2013\\
 	\url{http://www.cu.ipv6tf.org/literatura/sample.pdf}
+
+\bibitem{googleIPv6}
+ Steinar H. Gunderson
+ \emph{Global IPv6 Stadistics}
+ Nov 2008\\
+ \url{http://meetings.ripe.net/ripe-57/presentations/Colitti-Global_IPv6_statistics_-_Measuring_the_current_state_of_IPv6_for_ordinary_users_.7gzD.pdf}
 					
 \end{thebibliography}
 
