@@ -139,8 +139,8 @@ anotar las direcciones de un método que nosotros los humanos podamos entender s
 de 4 octetos expresados en decimal y separados por un punto. Estas direcciones se dividen 
 principalmente en dos partes. Una parte la primera es para identificar al ID de la red y la parte
 restante identifica al host dentro de la red, ambas juntas como se podrá ver identifican 
-unívocamente a un equipo conectado a la red. Historicamente se han dividio las direcciones en clases
-dando a una asignacion llamada \textbf{direccionamiento con clases}. Se utilizan cinco tipos de 
+unívocamente a un equipo conectado a la red. Historicamente se han dividió las direcciones en clases
+dando a una asignación llamada \textbf{direccionamiento con clases}. Se utilizan cinco tipos de 
 clases \emph{A, B, C, D, E}
 \begin{figure}[h!]
  \centering
@@ -167,7 +167,7 @@ permitir la división de una red en varias partes para uso interno, pero aún ac
 ante el mundo exterior. Esto se implementa con una mascara la cual tiene una estructura parecida a
 la de una dirección IP, un ejemplo seria una mascara donde no existe división la cual quedaría como 
 255.255.255.0, solamente el ultimo octeto queda libre para variar seria una mascara para clase C. 
-Entonces una mascara de clase A seria 255.0.0.0 y por ulitmo una de clase B se expresa 25.255.0.0. 
+Entonces una mascara de clase A seria 255.0.0.0 y por ultimo una de clase B se expresa 25.255.0.0. 
 La mascara permite poder identificar a la subred dentro de la red principal,pero sin que el exterior 
 note la división, por lo cual no es necesario solicitar nuevas direcciones. Por Ejemplo, al 
 introducirse subredes, se cambian las tablas de enrutamiento, agregando entradas con forma de (esta 
@@ -178,17 +178,110 @@ enrutador haga un AND booleano con la máscara de subred de la red para deshacer
 y buscar la dirección resultante en sus tablas (tras determinar de qué clase de red se trata). Por 
 eso se puede afirmar que la división de redes reduce espacio en la tabla de enrutamiento creando una 
 jerarquía de tres niveles, que consiste en red, subred y host.
-
+%\vspace{10cm}
 
 \subsection{Porque abandonar IPv4}
+\subsubsection{Agotamiento de direcciones IP}
 Uno de los mayores problemas que presenta IPv4 es su tamaño, el cual ya ha quedado chico para los
 estándares actuales. Este es un numero de solo 32bits con lo cual la cantidad máxima de números
 posibles es $2^{32}$ cual da un total de 4.294.967.296 posibles dirección eso es menos de una
-dirección por habitante\footnote{población actual de 7 mil millones de personas}.\par
-Esto se ve mas limitante con la llegada masiva de los dispositivos mobiles, los cuales se conectan
-a internet y la entrada de los grandes mercados emergentes del BRIC (Brasil, Rusia, India, China).
- 
-\section{La llegada de IPv6}
+dirección por habitante. Esto se ve mas limitante con la llegada masiva de los dispositivos mobiles, 
+los cuales se conectan a internet y la entrada de los grandes mercados emergentes del BRIC (Brasil, 
+Rusia, India, China).
+La introducción de nuevas tecnología, como NAT\footnote{Network Address Translator, traducción de 
+direcciones de red},que permiten usar direcciones IP privadas (como al interior de una LAN) para 
+comunicarse con Internet a retrasado este inevitable final.\par
+Pero quienes se encargan de asignar estas direcciones, esta tarea recae a nivel global en la IANA( 
+Internet Assigned Numbers Authority) y 5 RIRs (Regional Internet Registries), los cuales se encargan 
+de asignar las direcciones a usuarios finales y registrantes locales tales como los ISP en su área 
+designada. Se dividen en:
+\begin{figure}[h]
+\centering
+  \includegraphics[width=0.67\textwidth]{RIR.png}
+ \caption[Las 5 regiones RIR]{Las 5 regiones RIR}
+\end{figure}
+\begin{itemize}
+\item \textbf{AfriNIC} para el continente africano
+\item \textbf{APNIC} para la región de Australia, Nueva Zelanda, y asia oriental.
+\item \textbf{ARIN} para USA, Canada y partes del caribe.
+\item \textbf{LACNIC} para latinoamerica y el resto del caribe.
+\item \textbf{RIPE NCC} para europa, Rusia, el medio oriente y asia central.
+\end{itemize}\vspace{.2cm}
+
+
+Ya el 31 de enero de 2011 el IANA agoto su ultimo pool de direcciones libres a esto le siguió el 
+agotamiento de APNIC el 15 de abril del 2011 y de RIPE NCC el 14 de septiembre del año 2012, el 
+resto se espera que se agote en los próximos años. Esta ya real agotamiento en ciertas regiones deja
+de garantizar que se puedan realizar conexiones punto a punto como requieren ciertas aplicaciones
+hasta la llegada masiva de IPv6. Para poder controlar la explosión de requerimientos de direcciones.
+La APNIC, previo a quedar vacía, restringió a 1024 direcciones a cada miembro.
+Para mitigar estos inconvenientes y dado la incompatibilidad entre protocolos, se desarrollaron 
+medidas como gateways especiales que interactúan entre ambos.\par
+Analizar porque se agotan resulta muy interesante ya que demuestra los cambios sociales y económicos 
+de ciertas regiones:
+\begin{itemize}
+\item Dispositivos Móviles: El alcance masivo de los celulares con capacidad de conexión a internet 
+y además las tablets y cada vez mas dispositivos existentes se pueden conectar desde heladeras a 
+libros electrónicos, pasando por relojes y autos.
+\item Conexiones las 24 horas: Hoy en día es común tener una conexión permanente en las casas y 
+dispositivos, la penetración de la banda ancha (que entre otras cosas ofrece dicho servicio) crece 
+día a día en todo el mundo. Además como ya se dijo en los celulares y aparatos similares el 3G les 
+permite estar también siempre conectados.
+\item Demografía: Con el rápido crecimiento económico de países con grandes poblaciones como el BRIC 
+hace que se integren millones de personas nuevas a internet, los cuales también tienen mas medios 
+para realizar dicha conexión.
+\item Uso ineficiente: Dado el repentino crecimiento de internet esta no estaba del todo preparada 
+en un principio, cuando fue diseñada nunca se pensó en un uso tan extensivo y al principio se daban 
+direcciones de manera indiscriminada y sin mucho control.
+\end{itemize}
+
+\subsection{Otras cuestiones}
+Además de solucionar el gravísimo problema del bajo numero de direcciones IPv4, este protocolo 
+también tiene otros inconvenientes que IPv6 si soluciona de manera mas integrada.
+\begin{enumerate}
+
+\item \underline{Simplificación de los encabezados:}\\
+La mejora más importante de IPv6 es la simplificación de los encabezados de los datagramas. El 
+encabezado del datagrama en IPv6 es más simple que el utilizado en IPv4, así los campos que son 
+raramente utilizados han sido movidos a opciones separadas. Aunque las direcciones en IPv6 son 4 
+veces más largas, el encabezado IPv6 (sin opciones) es solamente el doble de largo que el encabezado 
+IPv4 (sin opciones).
+
+\item  \underline{Seguridad:}\\
+Todas las implementaciones de IPv6, en un futuro cercano, deben permitir la opción de utilizar 
+IPsec, a diferencia de IPv4 en donde su implementación era opcional (aunque bastante usual), esto 
+nos proporcionará más seguridad para el tráfico de paquetes de datos en la red.
+
+\item  \underline{Conexiones más eficaces:}\\
+Debido a que se utiliza una cabecera de paquete diferente en IPv6, añadiendo a los datos actuales 
+(origen, tamaño, etc.) otros datos tales como etiquetas de contenido, permite optimizar las 
+transferencias al poder dar prioridad a tipos determinados de archivos (por ejemplo, dar prioridad a 
+los archivos del tipo multimedia o de voz), haciendo a la vez posible que sea el usuario el que 
+decida estas prioridades.
+
+\item  \underline{Multicast:}\\
+Multicast, la habilidad de enviar un paquete único a destinos múltiples es parte de la 
+especificación base de IPv6. Esto es diferente a IPv4, donde es opcional (aunque usualmente 
+implementado).
+
+\item  \underline{Autoconfiguración:}\\
+Los nodos IPv6 pueden configurarse a sí mismos automáticamente cuando son conectados a una red 
+ruteada en IPv6 usando los mensajes de descubrimiento de routers de ICMPv6. La primera vez que son 
+conectados a una red, el nodo envía una solicitud usando multicast (router solicitation) pidiendo 
+los parámetros de configuración. Si los routers están configurados para esto, responderán este 
+requerimiento con un ``anuncio de router" (router advertisement) que contiene los parámetros de 
+configuración de la capa de red.
+
+\item  \underline{Desaparición de los NAT:}\\
+Muchas organizaciones que no disponen de suficientes números IP deben utilizar direcciones privadas 
+que apuntan a un único numero IP o dirección pública, siendo preciso un NAT que dirija el flujo de 
+datos desde la red interna a la exterior. Uno de los beneficios de IPv6 será la plena disponibilidad 
+de números IP, así se elimina la necesidad del uso de los NAT debido a que hay disponibles 
+direcciones IP de sobra, lo que permite que Internet vuelva a ser una red ``entre extremos".
+\end{enumerate}
+
+\section{IPv6} 
+\subsection{La llegada de IPv6}
 Principalmente internet era un prototipo que se hizo con un protocolo sencillo, nunca se creyó que 
 tuviese un crecimiento tan descomunal como para que en el futuro surgieran problemas tales como la 
 seguridad entre el tráfico de datos a través de la red, y la implementación de internet en otras 
@@ -199,7 +292,7 @@ que estos problemas no se encontraran nunca mas. Los desarrolladores del protoco
 años pero su implementación se hizo recientemente, es la implementación de un nuevo protocolo, 
 escalable, ilimitado y con una gran proyección a futuro.\par
 
-\section{Los Beneficios de IPv6}
+\subsection{Los Beneficios de IPv6}
 Entre los principales beneficios de IPv6 fue la solución a dos problemas fundamentales que tenia su 
 protocolo antecesor: la falta de direcciones, y la escalabilidad de la ruta. Las soluciones 
 implementadas fueron:
@@ -222,7 +315,7 @@ implementadas fueron:
 \caption[comparacion versiones IP]{Cuadro comparativo de las direcciones IP}
 \end{figure} \par
 
-\subsection{Jerarquía de Direcciones}
+\subsubsection{Jerarquía de Direcciones}
 IPv6 divide las direcciones en distintos ámbitos definidos o limites en los cuales se delegan las 
 direcciones, por lo que soluciona problemas de disgregación. Cuenta con un sistema de enrutamiento 
 que permite discernir rápidamente el tipo de paquete que es, así el enrutamiento se realiza de una 
@@ -257,7 +350,7 @@ enrutamiento, que forma parte de un requisito fundamental en IPv6. Así como hay
 también hay extensas ramificaciones y formas de organizarlas y controlarlas para que la asignación 
 de las mismas  no sea un problema.
 
-\subsection{Un mecanismo de direccionamiento  mas sencillo}
+\subsubsection{Un mecanismo de direccionamiento  mas sencillo}
 El modelo IPv6 esta  caracterizado por tener  una dirección de 128.Los primeros 64 bits están 
 destinados a la numeración de red y los últimos 64 se utilizan para la numeración del host, al tener 
 128 bits es mucho mas variada la cantidad de direcciones que se pueden formar y también aumenta la 
@@ -276,17 +369,17 @@ implementar direcciones MAC tan largas, la siguiente opción para la longitud pr
 caso, simplemente puede dejar el relleno de la dirección MAC, y el uso de los 64 completo
 bits de la dirección MAC para el ID de host.
 
-\subsection{Autoconfiguracion de direcciones}
-La mejor ventaja de IPv6 sin dudas es la capacidad de autoconfiguracion de las direcciones IP. Antes 
+\subsubsection{Autoconfiguracion de direcciones}
+La mejor ventaja de IPv6 sin dudas es la capacidad de autoconfiguración de las direcciones IP. Antes 
 de entrar en detalles sobre el tema hablaremos de \textbf{la dirección de multidifusion}. Esta 
 consiste en una dirección multicast que se puede asignar simultáneamente a mas de una maquina.Esta 
 dirección envía los paquetes al grupo de equipos asignados a la misma.Todas las maquinas que están 
 asignadas a esa dirección se dice que están en un grupo multicast, cuya dirección es la dirección  
-de multidifusion que utilizan.Los equipos conectados envían y reciben datos desde mas de un host. Se 
+de multidifusión que utilizan.Los equipos conectados envían y reciben datos desde mas de un host. Se 
 utiliza este estilo para realizar 1 a N o M transacciones.\par
-Asociando este concepto con el de autoconfiguracion, se puede decir que una red lan es un grupo de 
+Asociando este concepto con el de autoconfiguración, se puede decir que una red lan es un grupo de 
 maquinas y que cuando una nueva maquina ingresa a ese grupo, esta conectada y usan IPv6, se le 
-enviara a esa maquina nueva un paquete de multidifusion, este paquete se destinara a la dirección 
+enviara a esa maquina nueva un paquete de multidifusión, este paquete se destinara a la dirección 
 de un ámbito local. Cuando el router ve que este paquete entra, este se puede responder con la 
 dirección de red de la maquina nueva. La respuesta recibe el paquete y a su vez, lee el numero de 
 red que el router tiene enviado. Si se asigna una dirección de IPv6 añadiendo su ID de host. Todo 
@@ -299,8 +392,8 @@ asignado y cuales están libres en un tiempo dado.
 Esto le da una facilidad muy grande al administrador de redes ya que no debe perder tiempo en tareas 
 de seguimiento y en el renombramiento de la red.
 
-\subsection{Mejora en la Escalabilidad del Enrutamiento Multicast}
-En este apartado ampliaremos mas el concepto de dirección de multidifusion: En los inicios de 
+\subsubsection{Mejora en la Escalabilidad del Enrutamiento Multicast}
+En este apartado ampliaremos mas el concepto de dirección de multidifusión: En los inicios de 
 internet, los problemas de congestión fueron tolerados ya que los datos que enviaban y recibían los 
 usuarios no tenían porque ser en tiempo real. Hoy, por el contrario, las empresas están utilizando 
 internet para una amplia gama de aplicaciones. Esta tendencia de tener en nuestros dispositivos de 
@@ -309,13 +402,13 @@ otros, hace que se provoque la necesidad de un nuevo tipo de envío de trafico e
 enviar un conjunto de datos a muchas personas. Antiguamente se copiaba el archivo a enviar tantas 
 veces como destinatarios existían y se los enviaba a cada uno. El problema con este método es cuando 
 se quiere difundir un archivo en tiempo real de forma masiva, el ancho de banda quizás no sea lo 
-suficientemente grande como para manejar tal velocidad de datos. La idea de la multidifusion 
-justamente es tomar ese conjunto de datos y enviarlo por una dirección de multidifusion, un grupo 
+suficientemente grande como para manejar tal velocidad de datos. La idea de la multidifusión 
+justamente es tomar ese conjunto de datos y enviarlo por una dirección de multidifusión, un grupo 
 colectivo de direcciones por ejemplo en IPv4 se utiliza el intervalo de 224.0.0.0 a 239.255.255.255. 
 Cuando se quiere enviar algo a múltiples destinatarios, se asigna una dirección temporal del 
 intervalo para escuchar los paquetes que llegan del origen. Este concepto nos ayuda a ahorrar mucho 
 ancho de banda y velocidad de datos además de mantener una estructura de enrutamiento eficaz \par
-En IPv6 es posible asignar ciertas secuencias de multidifusion para ser transferido dentro de un 
+En IPv6 es posible asignar ciertas secuencias de multidifusión para ser transferido dentro de un 
 área determinada y no permitir que los paquetes salgan de esa zona, los limites de envío y recepción 
 de paquetes serán bien conocidos y entendidos por todos.
 
@@ -383,7 +476,7 @@ llegando al 8.85\% el mas alto del mundo, en latinoamerica Peru se encuentra en 
  \includegraphics[width=0.75\textwidth]{adopcionIPv6.png}
  \caption[Adopción Global de IPv6]{Adopción Global de IPv6}
 \end{figure}
-
+\subsection{El estado en Latinoamerica}
 
 
 \section{Desarrollo a futuro}
@@ -425,7 +518,8 @@ llegando al 8.85\% el mas alto del mundo, en latinoamerica Peru se encuentra en 
  Steinar H. Gunderson
  \emph{Global IPv6 Stadistics}
  Nov 2008\\
- \url{http://meetings.ripe.net/ripe-57/presentations/Colitti-Global_IPv6_statistics_-_Measuring_the_current_state_of_IPv6_for_ordinary_users_.7gzD.pdf}
+ \url{http://meetings.ripe.net/ripe-57/presentations/Colitti-Global_IPv6_statistics_-
+ _Measuring_the_current_state_of_IPv6_for_ordinary_users_.7gzD.pdf}
 					
 \end{thebibliography}
 
