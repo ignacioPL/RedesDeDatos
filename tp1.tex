@@ -476,10 +476,60 @@ llegando al 8.85\% el mas alto del mundo, en latinoamerica Peru se encuentra en 
  \includegraphics[width=0.75\textwidth]{adopcionIPv6.png}
  \caption[Adopción Global de IPv6]{Adopción Global de IPv6}
 \end{figure}
-\subsection{El estado en Latinoamerica}
 
-
-\section{Desarrollo a futuro}
+\subsection{Mecanismos de Transición}
+Dado que la penetración en el mercado es muy baja y ya se han agotado en ciertas regiones la 
+direcciones existentes se debe de buscar una solución, pero el problema radica en la 
+incompatibilidad de los protocolos, no se puede pasar a IPv6 y que este de servicio al estándar 
+anterior y realizar un paso gradual. Tampoco es factible apagar todos los servidores y clientes IPv4 
+y pasar a IPv6, asi que se debe de buscar una solución o soluciones de compromiso.\par
+Una solucion posible se encuentra disponible y se la llama dual-stack.
+En este caso se necesita contar con suficiente cantidad de direcciones IPv4 para poder desplegar las 
+dos versiones del protocolo en simultáneo en toda la red. De esta forma, cuando se establece una 
+conexión hacia un destino sólo IPv4, se utilizará la conectividad IPv4 y si es hacia una dirección 
+IPv6, se utilizará la red IPv6. En caso que el destino tenga ambos protocolos, normalmente se 
+preferirá intentar conectar primero por IPv6 y en segunda instancia por IPv4.
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=0.4\textwidth]{dual_stack.jpg}
+ \caption[Dual Stack]{Dual Stack}
+\end{figure}\par
+Otra solución en existencia no tan deseable como la anterior, pero sin lugar a dudas efectiva es el 
+tunneling.
+Es uno de los mecanismos mas antiguos para poder atravesar redes que no tienen soporte nativo del 
+protocolo que se está utilizando. En general se utilizan túneles encapsulando IPv6 dentro de IPv4, 
+permitiendo de esta forma atravesar redes que no manejan IPv6, pero también podemos encontrar la 
+situación inversa. Los paquetes originales son transportados hasta un punto de la red por medio del 
+protocolo original, luego encapsulados para atravesar la porción de red que no lo soporta y luego 
+des-encapsulados en el otro extremo para ser enviados al destino final en forma nativa.
+Los túneles mas habituales son los túneles manuales y los túneles automáticos. Los túneles manuales 
+se deben configurar explícitamente en algún equipo de la red, mientras que los automáticos se 
+configuran automáticamente en algunos sistemas operativos. En el caso de los primeros, podemos citar 
+los túneles manuales entre dos equipos o mediante "tunnel brokers". En el segundo caso, los más 
+conocidos son 6to4 y Teredo.
+Dentro de los mecanismos de encapsulado podemos mencionar también la técnica conocida como 6PE/6VPE, 
+que se utiliza para encapsular el tráfico IPv6 por parte de carriers que tienen redes MPLS.
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=0.57\textwidth]{ipv6_tunnel.jpg}
+ \caption[IPv6 Tunneling]{IPv6 Tunneling}
+\end{figure}\par
+Por ultimo analizaremos el método de traducción, esta técnica consiste en utilizar algún dispositivo 
+en la red que convierta los paquetes de IPv4 a IPv6 y viceversa. Ese dispositivo tiene que ser capaz 
+de realizar la traducción en los dos sentidos de forma de permitir la comunicación. Dentro de esta 
+clasificación podemos mencionar NAT64/DNS64: la red es IPv6 nativa y para llegar a sitios que son 
+sólo IPv4 se realiza una traducción al estilo NAT, mediante un mapeo entre los paquetes IPv6 e IPv4. 
+Se utiliza un prefijo especial para mapear direcciones IPv4 a IPv6: 64:ff9b::/96. Es necesario 
+también utilizar una modificación al DNS, llamada DNS64, que permite generar un registro AAAA aún 
+cuando el destino no tenga dirección IPv6 (es decir, el DNS responda sólo con registros de tipo A). 
+Vale la pena mencionar que una de las propuestas iniciales de mecanismos de traducción fue NAT-PT 
+(RFC 2766), que al dia de hoy ha sido desaconsejado debido a sus fallas (ver RFC 4966) y ha sido 
+reclasificado como ``histórico" por la IETF.
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=0.57\textwidth]{ipv6_translation.jpg}
+ \caption[Traducción IPv6]{Traducción IPv6}
+\end{figure}
 
 \newpage
 \begin{thebibliography}{9}
@@ -520,6 +570,10 @@ llegando al 8.85\% el mas alto del mundo, en latinoamerica Peru se encuentra en 
  Nov 2008\\
  \url{http://meetings.ripe.net/ripe-57/presentations/Colitti-Global_IPv6_statistics_-
  _Measuring_the_current_state_of_IPv6_for_ordinary_users_.7gzD.pdf}
+		
+\bibitem{IPV6}
+ ipv6.com\\
+ \url{http://www.ipv6.com/}		
 					
 \end{thebibliography}
 
