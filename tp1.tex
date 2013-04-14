@@ -16,7 +16,7 @@
 %\chead{}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{Ignacio Perez Laborda}
+\author{Ignacio Perez Laborda -- Barbara Martinez}
 
 \renewcommand{\thefootnote}{\roman{footnote}}
 
@@ -27,7 +27,7 @@
 \input{template_carat.tex}
 
 \tableofcontents
-
+\newpage
 \listoffigures
 
 \newpage
@@ -106,7 +106,7 @@ A continuación vemos la estructura de un datagrama de IP.
  \includegraphics[width=1\textwidth]{ipDatagram.png}
  \caption[Paquete IP]{Paquete IP}
 \end{figure}\par
-Explicacion de los campos:\par
+Explicación de los campos:\par
 \begin{description}
 
 \item[Version] representa la version del estándar actualmente es cuatro en transición a 6.
@@ -139,7 +139,7 @@ anotar las direcciones de un método que nosotros los humanos podamos entender s
 de 4 octetos expresados en decimal y separados por un punto. Estas direcciones se dividen 
 principalmente en dos partes. Una parte la primera es para identificar al ID de la red y la parte
 restante identifica al host dentro de la red, ambas juntas como se podrá ver identifican 
-unívocamente a un equipo conectado a la red. Historicamente se han dividió las direcciones en clases
+unívocamente a un equipo conectado a la red. Históricamente se han dividió las direcciones en clases
 dando a una asignación llamada \textbf{direccionamiento con clases}. Se utilizan cinco tipos de 
 clases \emph{A, B, C, D, E}
 \begin{figure}[h!]
@@ -180,8 +180,8 @@ eso se puede afirmar que la división de redes reduce espacio en la tabla de enr
 jerarquía de tres niveles, que consiste en red, subred y host.
 %\vspace{10cm}
 
-\subsection{Porque abandonar IPv4}
-\subsubsection{Agotamiento de direcciones IP}
+\subsection{Porque Abandonar IPv4}
+\subsubsection{Agotamiento de Direcciones IP}
 Uno de los mayores problemas que presenta IPv4 es su tamaño, el cual ya ha quedado chico para los
 estándares actuales. Este es un numero de solo 32bits con lo cual la cantidad máxima de números
 posibles es $2^{32}$ cual da un total de 4.294.967.296 posibles dirección eso es menos de una
@@ -235,7 +235,7 @@ en un principio, cuando fue diseñada nunca se pensó en un uso tan extensivo y 
 direcciones de manera indiscriminada y sin mucho control.
 \end{itemize}
 
-\subsection{Otras cuestiones}
+\subsubsection{Otras Cuestiones}
 Además de solucionar el gravísimo problema del bajo numero de direcciones IPv4, este protocolo 
 también tiene otros inconvenientes que IPv6 si soluciona de manera mas integrada.
 \begin{enumerate}
@@ -281,7 +281,7 @@ direcciones IP de sobra, lo que permite que Internet vuelva a ser una red ``entr
 \end{enumerate}
 
 \section{IPv6} 
-\subsection{La llegada de IPv6}
+\subsection{La Llegada de IPv6}
 Principalmente internet era un prototipo que se hizo con un protocolo sencillo, nunca se creyó que 
 tuviese un crecimiento tan descomunal como para que en el futuro surgieran problemas tales como la 
 seguridad entre el tráfico de datos a través de la red, y la implementación de internet en otras 
@@ -300,19 +300,18 @@ implementadas fueron:
 \item Incremento de las direcciones IP
 \item Desarrollo en la jerarquía de direcciones
 \item Organización en los perfiles de red
-\item Autoconfiguracion sencilla de la red
+\item Autoconfiguración sencilla de la red
 \item Mejora en la escalabilidad del enrutamiento
 \item Enrutamiento a la mejor dirección posible(Anycast)
 \item Mejoras en la seguridad
 \item Mejoras en la movilidad
 \item Se agregan nuevas tecnologías que mejoran la performance del protocolo
-
-\end {itemize}
+\end{itemize}
 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.8\textwidth]{comparativo_ip.png}
-\caption[comparacion versiones IP]{Cuadro comparativo de las direcciones IP}
+\caption[Comparación versiones IP]{Cuadro comparativo de las direcciones IP}
 \end{figure} \par
 
 \subsubsection{Jerarquía de Direcciones}
@@ -336,7 +335,7 @@ proporciona el TDA, romper su porción de direcciones y delegar las direcciones 
 estén en el sitio.Otro beneficio importante que se puede destacar del NLA se relaciona con la 
 estabilidad de ruta actual de todas las rutas a nivel mundial dejando de lado las inestabilidades 
 conocidas como cortes, fallo en enlaces y lentitud en el tráfico de datos. Debido a esta 
-inestabilidad, el concepto de "route dampening" surgió y trabaja de la siguiente forma: cada vez que 
+inestabilidad, el concepto de ``route dampening" surgió y trabaja de la siguiente forma: cada vez que 
 una ruta se retira y se renuncia, se le asigna una penalización que se mantiene hasta el lugar donde 
 se encuentra la inestabilidad que por lo general suele ser una frontera exterior o  protocolo de 
 puerta de enlace. Mientras mas alta sea la inestabilidad, mas alta será la penalidad asociada con la 
@@ -350,8 +349,8 @@ enrutamiento, que forma parte de un requisito fundamental en IPv6. Así como hay
 también hay extensas ramificaciones y formas de organizarlas y controlarlas para que la asignación 
 de las mismas  no sea un problema.
 
-\subsubsection{Un mecanismo de direccionamiento  mas sencillo}
-El modelo IPv6 esta  caracterizado por tener  una dirección de 128.Los primeros 64 bits están 
+\subsubsection{Un Mecanismo de Direccionamiento  mas Sencillo}
+El modelo IPv6 esta  caracterizado por tener una dirección de 128. Los primeros 64 bits están 
 destinados a la numeración de red y los últimos 64 se utilizan para la numeración del host, al tener 
 128 bits es mucho mas variada la cantidad de direcciones que se pueden formar y también aumenta la 
 seguridad de la red. Debemos recordar que los últimos 64 bits del id del host se obtienen a partir 
@@ -365,13 +364,13 @@ proporcionado por el proveedor de la MAC.\par
 El conflicto reside en si es necesario que las direcciones MAC tengan que cambiar su longitud  solo 
 porque con el protocolo IPv6 cambia las longitudes del direccionamiento, si la necesidad de 
 implementar direcciones MAC tan largas, la siguiente opción para la longitud proporcionara mas de 
-1.8E019 direcciones MAC en lugar de usar (264-248) si este viene a ser el
+$1.8 \times 10^{19}$ direcciones MAC en lugar de usar (264-248) si este viene a ser el
 caso, simplemente puede dejar el relleno de la dirección MAC, y el uso de los 64 completo
 bits de la dirección MAC para el ID de host.
 
-\subsubsection{Autoconfiguracion de direcciones}
+\subsubsection{Autoconfiguración de Direcciones}
 La mejor ventaja de IPv6 sin dudas es la capacidad de autoconfiguración de las direcciones IP. Antes 
-de entrar en detalles sobre el tema hablaremos de \textbf{la dirección de multidifusion}. Esta 
+de entrar en detalles sobre el tema hablaremos de \textbf{la dirección de multidifusión}. Esta 
 consiste en una dirección multicast que se puede asignar simultáneamente a mas de una maquina.Esta 
 dirección envía los paquetes al grupo de equipos asignados a la misma.Todas las maquinas que están 
 asignadas a esa dirección se dice que están en un grupo multicast, cuya dirección es la dirección  
@@ -415,7 +414,7 @@ de paquetes serán bien conocidos y entendidos por todos.
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.7\textwidth]{formato_multicast.png}
- \caption[Formato Multicast]{Formato de una dirección multicast en IPV6}
+ \caption[Formato Multicast]{Formato de una dirección multicast en IPv6}
 \end{figure} \par
 En la figura de arriba podemos ver el Formato de una dirección multicast. Todos los ocho bits se 
 establecen en uno, lo que permitirá a un dispositivo de enrutamiento saber inmediatamente si el 
@@ -423,15 +422,15 @@ paquete es de multidifusion y sujeto a la manipulación asociado con su tipo. Lo
 bits se utilizan para los "flags": los tres primeros flags son reservados y no están definidos por 
 lo que están establecidos en cero, el cuarto bit se lo conoce como bit T y se utiliza para decidir 
 si la dirección multicast es una dirección permanente o una asignación temporal como se ha hablado 
-en el párrafo anterior. Ese ultimo campo nos informara si la dirección de multidifusion que se esta 
+en el párrafo anterior. Ese ultimo campo nos informara si la dirección de multidifusión que se esta 
 utilizando es la que viene de serie. El siguiente campo nos dirá hasta que punto puede llegar la 
-multidifusion, en lo que áreas de un dominio de enrutamiento de un paquete puede viajar y la 
+multidifusión, en lo que áreas de un dominio de enrutamiento de un paquete puede viajar y la 
 dirección del grupo que puede ser alcanzado. Toma los siguientes valores:\par
 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.71\textwidth]{valoresM.png}
- \caption[Valores del campo scope]{Valores que puede tomar el campo "scope"}
+ \caption[Valores del campo scope]{Valores que puede tomar el campo ``scope"}
 \end{figure} \par
 
 Dependiendo de como asignemos nuestra dirección multicast, podremos controlar que tan lejos viajarán 
@@ -442,42 +441,81 @@ y a quien se la enviará, por lo tanto, en lugar de dejarle a un administrador d
 colocar filtros para que algunos paquetes le lleguen a cierta gente y a otros no, podemos dejarle 
 esta tarea a este mecanismo. Esto también permite una fácil configuración de un nivel de privacidad 
 y muy bien definido, que también facilita el mantenimiento del mismo.
-\subsubsection{Dirección anycast}
-\par IPV6 implementará un nuevo tipo de dirección, la dirección \textbf{anycast}.Este tipo de dirección mejora la eficiencia del enrutamiento , pero antes de explicar cómo lo hace ,pasaremos a definir de qué se trata este nuevo tipo de dirección:
-Esta dirección de IPV6  esta asignada a un grupo de uno o mas hosts que tienen un propósito en comun.Cuando los paquetes son enviados a la dirección anycast, la direccion decide a qué equipo del grupo  va a enrutar primero el paquete analizando cual es el mas cercano a la fuente del mismo que se determina por la \textbf{IGP}\footnote{Interior Gateway Protocol} de la red en cuestión.Esto dispersa la funcionalidad geograficamente por lo tanto aporta una notable diferencia en dos sentidos.Si bien el formato multicast y el anycast son para mas de una maquina host, la dirección anycast sirve para la transmisión de datos uno a uno mientras que la multicast sirve para uno a muchos.
-\par Este tipo de dirección ahorra mucho tiempo al usuario en la recepción de paquetes ya que el equipo mas cercano al equipo fuente será el que le tome menos tiempo en llegarle la información y así sucesivamente, además de ahorrar ancho de banda ya que la distancia entre un paquete  es minimizada, y al usar menos ancho de banda tambien se ahorra dinero
-En una dirección de formato anycast las maquinas estan enumeradas
+
+\subsubsection{Dirección Anycast}
+IPv6 implementará un nuevo tipo de dirección, la dirección \textbf{anycast}. Este tipo de dirección 
+mejora la eficiencia del enrutamiento, pero antes de explicar cómo lo hace, pasaremos a definir de 
+qué se trata este nuevo tipo de dirección:
+Esta dirección de IPv6  esta asignada a un grupo de uno o mas hosts que tienen un propósito en 
+común. Cuando los paquetes son enviados a la dirección anycast, la dirección decide a qué equipo del 
+grupo va a enrutar primero el paquete analizando cual es el mas cercano a la fuente del mismo que se 
+determina por la \textbf{IGP}\footnote{Interior Gateway Protocol} de la red en cuestión.Esto 
+dispersa la funcionalidad geográficamente por lo tanto aporta una notable diferencia en dos 
+sentidos. Si bien el formato multicast y el anycast son para mas de una maquina host, la dirección 
+anycast sirve para la transmisión de datos uno a uno mientras que la multicast sirve para uno a 
+muchos.\par 
+Este tipo de dirección ahorra mucho tiempo al usuario en la recepción de paquetes ya que el equipo 
+mas cercano al equipo fuente será el que le tome menos tiempo en llegarle la información y así 
+sucesivamente, además de ahorrar ancho de banda ya que la distancia entre un paquete  es minimizada, 
+y al usar menos ancho de banda también se ahorra dinero. En una dirección de formato anycast las 
+maquinas están enumeradas.
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.71\textwidth]{anycast.png}
  \caption[Esquema anycast]{Esquema de cómo trabajan las direcciones anycast}
 \end{figure} \par
 
-\subsubsection{La nueva cabecera del IPV6}
-La nueva cabecera que implementará el IPV6 solo tiene seis campos y dos direcciones que a diferencia del IPV4  que contiene diez campos arreglados, dos direcciones y un campo opciones de tamaño variable.
+\subsubsection{La Nueva Cabecera del IPv6}
+La nueva cabecera que implementará el IPv6 solo tiene seis campos y dos direcciones que a diferencia 
+del IPv4 que contiene diez campos arreglados, dos direcciones y un campo opciones de tamaño 
+variable.
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.71\textwidth]{ipv6head.png}
- \caption[Valores del campo scope]{Esquema que muestra como es la cabecera de IPV6}
+ \caption[Valores del campo scope]{Esquema que muestra como es la cabecera de IPv6}
 \end{figure} \par
-Las cualidades importantes que resaltan la sencillez de esta nueva cabecera son :
+Las cualidades importantes que resaltan la sencillez de esta nueva cabecera son:
 \begin{description}
-\item[Formato Simplificado] Se simplifico la cantidad de campos de la cabecera,también se quito la variable de tamaño opcional.Este formato simplifcado aporta mayor flexibilidad al protocolo
-\item[No hay checksum de la cabecera] fue eliminado el checksum de la cabecera , este campo fue incluido en IPV4 porque  se necesitaba asegurar la integridad de los datos .Ahora, al ser Internet mucho más veloz no se necesita esta herramienta, ademas de que ahora el checksum se realiza en el host, no en el router.
-\item[Salteo de fragmentación del Procedure] En IPv4 , los router fragmentaban paquetes que eran demasiado largos para la transmision directa.Esto significaba un esfuerzo extra que consistia en fragmentarlos para su transmision.En IPv6 solo el host puede fragmentar el paquete.Para ayudar al host, IPv6 incluye una función que encuentra la máxima unidad de transmision(\textbf{MTU}) tamaño del origen hacia la transmisión
+\item[Formato Simplificado] Se simplifico la cantidad de campos de la cabecera,también se quito la 
+variable de tamaño opcional. Este formato simplificado aporta mayor flexibilidad al protocolo.
+\item[No hay checksum de la cabecera] fue eliminado el checksum de la cabecera, este campo fue 
+incluido en IPv4 porque  se necesitaba asegurar la integridad de los datos. Ahora, al ser Internet 
+mucho más veloz no se necesita esta herramienta, además de que ahora el checksum se realiza en el 
+host, no en el router.
+\item[Salteo de fragmentación del Procedure] En IPv4 , los router fragmentaban paquetes que eran 
+demasiado largos para la transmisión directa. Esto significaba un esfuerzo extra que consistía en 
+fragmentarlos para su transmisión. En IPv6 solo el host puede fragmentar el paquete. Para ayudar al 
+host, IPv6 incluye una función que encuentra la máxima unidad de transmisión(\textbf{MTU}) tamaño 
+del origen hacia la transmisión.
 
 \end {description}
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.71\textwidth]{header.png}
- \caption[Cabeceras IPV6]{Esquema que muestra como es la cabecera de IPV6}
+ \caption[Cabeceras IPv6]{Esquema que muestra como es la cabecera de IPv6}
 \end{figure} \par
 \subsubsection{Seguridad}
-IPv6 es mas seguro porque puede soportar seguridad basada en encriptación interoperable.IPv6 integra seguridad a su arquitectura introduciendo dos extensiones de cabecera opcionales : La cabecera de autenticación y la cabecera \textbf{ESP}\footnote{Encripted Security Payload}.Pasaremos a describir brevemente cada una 
+IPv6 es mas seguro porque puede soportar seguridad basada en encriptación interoperable. IPv6 
+integra seguridad a su arquitectura introduciendo dos extensiones de cabecera opcionales: La 
+cabecera de autenticación y la cabecera \textbf{ESP}\footnote{Encripted Security Payload}. Pasaremos 
+a describir brevemente cada una. 
 \begin{description}
-\item[Cabecera de Autenticación] su secreto es un valor que chequea la integridad de los campos (\textbf{ICV}\footnote{integrity check value}), este es computado por el origen y nuevamente computado por el destino
-\item[Salteo de fragmentación del Procedure] En IPv4 , los router fragmentaban paquetes que eran demasiado largos para la transmision directa.Esto significaba un esfuerzo extra que consistia en fragmentarlos para su transmision.En IPv6 solo el host puede fragmentar el paquete.Para ayudar al host, IPv6 incluye una función que encuentra la máxima unidad de transmision(\textbf{MTU}) tamaño del origen hacia la transmisión.Proporciona integridad entre ambos puntos y autenticacíon de los datos de origen , también verifica la integridad del origen de los datos, contiene un campo llamado  numero de secuencia que se utiliza para detectar los replays de los paquetes.Tambien con esta cabecera se puede detectar la llegada de un paquete con IP duplicada
-\item[Cabecera ESP] Contiene un parametro de indice de seguridad (\textbf{SPI}) que refiere a una asociacion de seguridad informandole al destinatario como esta encriptada la utilidad.Cuando se crea un tunel, esta  cabecera original se encripta junto con la utilidad y se manda por un IPv6 externo y una cabecera ESP externa tambien. Una puerta de enlace separa la información y la decodifica.Esto hace que el tráfico no se atasque.
+\item[Cabecera de Autenticación] su secreto es un valor que chequea la integridad de los campos 
+(\textbf{ICV}\footnote{integrity check value}), este es computado por el origen y nuevamente 
+computado por el destino.
+\item[Salteo de fragmentación del Procedure] En IPv4, los router fragmentaban paquetes que eran 
+demasiado largos para la transmisión directa.Esto significaba un esfuerzo extra que consistía en 
+fragmentarlos para su transmisión. En IPv6 solo el host puede fragmentar el paquete. Para ayudar al 
+host, IPv6 incluye una función que encuentra la máxima unidad de transmisión(\textbf{MTU}) tamaño 
+del origen hacia la transmisión. Proporciona integridad entre ambos puntos y autenticacíon de los 
+datos de origen, también verifica la integridad del origen de los datos, contiene un campo llamado  
+numero de secuencia que se utiliza para detectar los replays de los paquetes. También con esta 
+cabecera se puede detectar la llegada de un paquete con IP duplicada.
+\item[Cabecera ESP] Contiene un parámetro de índice de seguridad (\textbf{SPI}) que refiere a una 
+asociación de seguridad informándole al destinatario como esta encriptada la utilidad. Cuando se 
+crea un túnel, esta  cabecera original se encripta junto con la utilidad y se manda por un IPv6 
+externo y una cabecera ESP externa también. Una puerta de enlace separa la información y la 
+decodifica.Esto hace que el tráfico no se atasque.
 \end {description}
 \subsubsection{Movilidad}
 
@@ -489,25 +527,53 @@ Cuatro conceptos fundamentales acerca de la movilidad:
 \item Agente hogareño
 
 \end {itemize}
-las IPv6 moviles son identificadas por un una dirección hogareña , sin importar a cual esten asociadas al momento.Cuando un host movil cambia a uno de una subred a otra, se necesita una dirección de atención para llevar a cabo el proceso de autoconfiguración dentro de la subred.La asociación entre la dirección hogareña y la dirección de atención se llama encuadernamiento.Cuando el dispositivo adquiere su dirección de de atención le notifica al agente hogareño de este cambio de estado con un mensaje de  actualización de encuadernamiento, el agente mantiene lo que se llama un cache de encuadernamiento que es el mapeo entre ambas direcciones la de atención con la hogareña.
-\par Un host movil se puede alcanzar mediante el envío de un paquete a su dirección hogareña o local también podríamos llamarla.Si esta direccion esta conectada a la red domestica , e l agente de origen reenviará el paquete al host movil a través de su dirección de atención.Entonces enviara un mensaje de actualizacíon al nodo de origen , se actualizará y enviará los paquetes subsiguentes directamente al nodo movil a traves de su atencion  de la dirección. \par 
-Los propositos de esto basicamente son orientados a los teléfonos celulares .
+las IPv6 móviles son identificadas por un una dirección hogareña, sin importar a cual estén 
+asociadas al momento. Cuando un host móvil cambia a uno de una subred a otra, se necesita una 
+dirección de atención para llevar a cabo el proceso de autoconfiguración dentro de la subred. La 
+asociación entre la dirección hogareña y la dirección de atención se llama encuadernamiento. Cuando 
+el dispositivo adquiere su dirección de de atención le notifica al agente hogareño de este cambio de 
+estado con un mensaje de  actualización de encuadernamiento, el agente mantiene lo que se llama un 
+cache de encuadernamiento que es el mapeo entre ambas direcciones la de atención con la hogareña.
+\par Un host movil se puede alcanzar mediante el envío de un paquete a su dirección hogareña o local 
+también podríamos llamarla.Si esta dirección esta conectada a la red domestica, e l agente de origen 
+reenviará el paquete al host móvil a través de su dirección de atención.Entonces enviara un mensaje 
+de actualización al nodo de origen, se actualizará y enviará los paquetes subsiguientes directamente 
+al nodo móvil a través de su atención  de la dirección. \par 
+Los propósitos de esto básicamente son orientados a los teléfonos celulares.
 \subsubsection{Performance/Rendimiento}
 IPv6 incluye mejoras en el rendimiento y la escalabilidad.
 
 \begin{description}
-\item[Reduccion de la traducción de direcciones] En IPv6 la traducción de direcciones para superar las limitaciones de espacio no es necesaria ,a diferencia de IPV4 que solo utiliza direcciones privadas limitadas dentro de la red privada.
-\item[Reduccion de gastos de enrutamiento] las direcciones IPV6 asigna a traves de servicios proveedores para fomentar una jerarquía de direccionamiento que reduce el enrutamiento exagerado.
-\item[Ruta mas estable en IPV4]Resultados de una ruta cuando un enlace fiable es repetidamente retirado y volcer a ser advertido , el procesamiento de estos cambios de enrutamiento supone una carga para Internet.En IPV6 , un solo proveedor puede agregar las rutas de muchas redes y permieten aislar la red del proveedor
-\item[Reduccion de difusión] IPV6  utiliza el descubrimento de vecinos para realizar una funcion similar durante el proceso de configuración automática sin el uso de difusiones ARP
-\item[Multicast con ámbitos de enlace] IPV6 contiene una dirección de multidifusión que contiene un campo de alcance que puede restringir los paquetes de multidifusión para el nodo, el enlace o la organización
-\item [Cabecera Simplificada] IPV6 Posee un encabezado aerodinamico de ocho campos de longitud fija.Estas cabeceras reducen la sobrecarga de la red.
-\item[No Fragmentacion del nodo intermediario]IPV6 proporciona el MTU Discovery que es una funcion para determinar el tamaño del MTU y para el camino desde el origen hacia el destino
-\item[No existencia del checksum de cabecera]IPV6 no necesita ese checksum de cabecera ya que la fiabilidad de los enlaces de red de hoy en dia reduce la probabilidad de que los paquetes sean erróneos.Reduce la carga de la red.
+\item[Reducción de la traducción de direcciones] En IPv6 la traducción de direcciones para superar 
+las limitaciones de espacio no es necesaria, a diferencia de IPv4 que solo utiliza direcciones 
+privadas limitadas dentro de la red privada.
+\item[Reducción de gastos de enrutamiento] las direcciones IPv6 asigna a través de servicios 
+proveedores para fomentar una jerarquía de direccionamiento que reduce el enrutamiento exagerado.
+\item[Ruta mas estable en IPv4]Resultados de una ruta cuando un enlace fiable es repetidamente 
+retirado y volver a ser advertido, el procesamiento de estos cambios de enrutamiento supone una 
+carga para Internet. En IPv6, un solo proveedor puede agregar las rutas de muchas redes y permiten 
+aislar la red del proveedor.
+\item[Reducción de difusión] IPv6  utiliza el descubrimiento de vecinos para realizar una función 
+similar durante el proceso de configuración automática sin el uso de difusiones ARP
+\item[Multicast con ámbitos de enlace] IPv6 contiene una dirección de multidifusión que contiene un 
+campo de alcance que puede restringir los paquetes de multidifusión para el nodo, el enlace o la 
+organización.
+\item [Cabecera Simplificada] IPv6 Posee un encabezado aerodinámico de ocho campos de longitud 
+fija. Estas cabeceras reducen la sobrecarga de la red.
+\item[No Fragmentación del nodo intermediario]IPv6 proporciona el MTU Discovery que es una función 
+para determinar el tamaño del MTU y para el camino desde el origen hacia el destino
+\item[No existencia del checksum de cabecera]IPv6 no necesita ese checksum de cabecera ya que la 
+fiabilidad de los enlaces de red de hoy en día reduce la probabilidad de que los paquetes sean 
+erróneos.Reduce la carga de la red.
 \end{description}
-\subsection{IPV6 Vs IPV4}
-\subsubsection{Estructura de dirección}
-IPV6 cuenta con una dirección de 128 bits de longitud y comprendido por un prefijo de subred y una interfaz de identificacion.En ambos protocolos el prefijo y la interface cuentan con 64 bits de largo, pero el prefijo de subred es el numero de red asignado al vinculo, el identificador de interfaz deriva de la direccion MAC.Durante la configuracíon de la red IPv6 el nodo host remplaza su propia ID de interfaz por una ROM.
+
+\subsection{IPv6 vs IPv4}
+\subsubsection{Estructura de Dirección}
+IPv6 cuenta con una dirección de 128 bits de longitud y comprendido por un prefijo de subred y una 
+interfaz de identificación.En ambos protocolos el prefijo y la cuentan con 64 bits de largo, pero el 
+prefijo de subred es el numero de red asignado al vinculo, el identificador de interfaz deriva de la 
+dirección MAC. Durante la configuración de la red IPv6 el nodo host remplaza su propia ID de 
+interfaz por una ROM.
 
 \begin{figure}[h!]
  \centering
@@ -515,55 +581,88 @@ IPV6 cuenta con una dirección de 128 bits de longitud y comprendido por un pref
  \caption[Comparaciones]{Comparación entre IPv4 e IPv6}
 \end{figure} \par
 
-Las direcciones mac hoy en dia solo son de 48-bits de longitud para 16 bits en el id de interfaz que es reservado.En contraste IPV4 son 32 bits de longitud.Estas también están comprendidas en un numero de subred.En ipv4 los administradores de red asignan tanto el numero de subred como el número de host.
-\subsection{Administracion de direcciones}
-IPV6 cuenta con un prefijo de subred de 64 bits, que se subdivide en cinco campos que se ilustrarán en la figura siguente , el primer campo es el de prefijo de formato(fp) que identifica una unidifusion global agregable.El tercero se reserva para uso futuro
+Las direcciones MAC hoy en día solo son de 48-bits de longitud para 16 bits en el id de interfaz que 
+es reservado. En contraste IPv4 son 32 bits de longitud.Estas también están comprendidas en un 
+numero de subred. En IPv4 los administradores de red asignan tanto el numero de subred como el 
+número de host.
+\subsection{Administración de Direcciones}
+IPv6 cuenta con un prefijo de subred de 64 bits, que se subdivide en cinco campos que se ilustrarán 
+en la figura siguiente, el primer campo es el de prefijo de formato(fp) que identifica una 
+unidifusión global agregable. El tercero se reserva para uso futuro
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.71\textwidth]{asign.png}
- \caption[Asignacion de prefijo]{Prefijo de subred de la direccion unicast}
+ \caption[Asignación de prefijo]{Prefijo de subred de la dirección unicast}
 \end{figure} \par
-La clave para el entendimiento de IPv6 son dos campos : el TLA ID y el NLA ID.Apoyan a una direccionamiento jerárquico.Direcciones IPV6 globales se asignan a los proveedores de servicios o de organizaciones TLA , las organizaciones a su vez asignan espacio para la agregación del siguiente nivel NLA.Esta jerarquía que IPv4 no tiene estimula la agregación de direcciones para reducir el tamaño del nucleo de las tablas de enrutamiento.
-Por otra parte en IPv4 las direcciones son comunmente asignadas por bloques CIDR .Cada bloque CIDR se compone de una o mas direcciones de clase C.Cada bloque de clase C puede tratar aproximadamente 254 dispositivos.Desafortunadamente los bloques CIDR tienen asignadas a diferentes organizaciones no pueden ser facilmente agregados y cada bloque CIDR requiere una entrada en la tabla de enrutamiento separada de un router.El nucleo de estos bloques ha provocado un crecimiento explosivo en el tamaño del nucleo de la tablas de enrutamiento cosa que perjudica a la velocidad de enrutamiento ya que al ser mas grande la tabla , cuesta mas trabajo encontrar la dirección destino.\par
-El administrador no deberá preocuparse por la configuración de la red como ya hemos mencionado.Las direcciones globales unicast no requieren traducción de direcciones cuando se utiliza para acceder a
-redes externas tales como la Internet. En IPv4, los espacios de direcciones privadas se utilizan cuando las direcciones son globales, entonces deben traducirse a un conjunto limitado de direcciones globales cuando se accede a redes externas.
+La clave para el entendimiento de IPv6 son dos campos: el TLA ID y el NLA ID. Apoyan a una 
+direccionamiento jerárquico. Direcciones IPv6 globales se asignan a los proveedores de servicios o de 
+organizaciones TLA, las organizaciones a su vez asignan espacio para la agregación del siguiente 
+nivel NLA. Esta jerarquía que IPv4 no tiene estimula la agregación de direcciones para reducir el 
+tamaño del núcleo de las tablas de enrutamiento. Por otra parte en IPv4 las direcciones son 
+comúnmente asignadas por bloques CIDR. Cada bloque CIDR se compone de una o mas direcciones de clase 
+C. Cada bloque de clase C puede tratar aproximadamente 254 dispositivos. Desafortunadamente los 
+bloques CIDR tienen asignadas a diferentes organizaciones no pueden ser fácilmente agregados y cada 
+bloque CIDR requiere una entrada en la tabla de enrutamiento separada de un router. El núcleo de 
+estos bloques ha provocado un crecimiento explosivo en el tamaño del núcleo de la tablas de 
+enrutamiento cosa que perjudica a la velocidad de enrutamiento ya que al ser mas grande la tabla, 
+cuesta mas trabajo encontrar la dirección destino.\par
+El administrador no deberá preocuparse por la configuración de la red como ya hemos mencionado.Las 
+direcciones globales unicast no requieren traducción de direcciones cuando se utiliza para acceder a
+redes externas tales como la Internet. En IPv4, los espacios de direcciones privadas se utilizan 
+cuando las direcciones son globales, entonces deben traducirse a un conjunto limitado de direcciones 
+globales cuando se accede a redes externas.
 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.71\textwidth]{aaip46.png}
- \caption[Asignacion de prefijo]{Comparativo de administracion de direcciones ipv6 vs ipv4}
+ \caption[Comparativo IPv4, IPv6]{Comparativo de administración de direcciones IPv6 vs IPv4}
 \end{figure} \par
 
-\subsubsection{Comparacion de cabeceras}
-IPV6 ofrece una cabecera mas ágil que la de IPv4. Se eliminan cinco campos incluyendo el de longitud variable que existe en IPv4 , los campos del primero cuentan cun formato fijo de cuarenta bytes
+\subsubsection{Comparación de cabeceras}
+IPv6 ofrece una cabecera mas ágil que la de IPv4. Se eliminan cinco campos incluyendo el de longitud 
+variable que existe en IPv4, los campos del primero cuentan con formato fijo de cuarenta bytes.
 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.71\textwidth]{compcab.png}
- \caption[Asignacion de prefijo]{Comparativo de cabeceras }
+ \caption[Comparativo de cabeceras]{Comparativo de cabeceras }
 \end{figure} \par
 
-Sin embargo IPV6 cuenta con unos cabeceras adicionales que solo nombraremos , ya que los mas importantes fueron detallados en la seccion anterior:
+Sin embargo IPv6 cuenta con unos cabeceras adicionales que solo nombraremos, ya que los mas 
+importantes fueron detallados en la sección anterior:
 \begin{itemize}
-\item Cabecera " Salto a Salto" 
-\item Cabecera de opcion a destino
+\item Cabecera ``Salto a Salto" 
+\item Cabecera de opción a destino
 \item  Cabecera  de Ruteo
 \item Cabecera de Fragmentación
 \item Cabecera de Autenticación
 \item  Cabecera ESP
 \end{itemize}
-\subsection{Conclusion de la comparación}
-Para ir finalizando la seccion , presentaremos un cuadro comparativo que resumirá las comparaciones tratadas aquí.
 
+\subsection{Conclusión de la Comparación}
+Para ir finalizando la sección, presentaremos un cuadro comparativo que resumirá las comparaciones 
+tratadas aquí.
 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.71\textwidth]{comp.png}
- \caption[Asignacion de prefijo]{Comparativo de cabeceras }
+ \caption[Diferencias]{Diferencias entre protocolos}
 \end{figure} \par
 
-IPv6 proporciona seguridad integrada compatible con el uso de cabeceras de autenticacion y cifrado , para la movilidad proporciona funciones de agente interno y direcciones de atención.Ofrece un plug an play y la dirección del host puede ser configurada automáticamente.Ipv4 no tiene incorporada la funcion de autoconfiguracion , por lo tanto no puede configurar obteniendo parámetros de las fuentes externas tales como servidores DNS.Ipv4 se vasa en aumentaciones tales como \textbf{IGMP}\footnote{Internet Group Management Protocol} e Ipv6 tiene \textbf{MLD}\footnote{Multicast Liner Discovery} que permite determinar cual de los puertos contienen oyentes de multidifusion.
-Ipv4 fragmenta paquetes para para poder transportar paquetes muy grandes , lo que satura la red , Ipv6 solo permite el nodo de origen para fragmentar un paquete.Proporciona una ruta de MTU Discovery function que permite que la fuente del paquete fragmente los paquetes de forma eficiente.Esto elimina la necesidad de los dispositivos de red para fragmentar aun mas un paquete a lo largo de la transferencia.
+IPv6 proporciona seguridad integrada compatible con el uso de cabeceras de autenticación y cifrado, 
+para la movilidad proporciona funciones de agente interno y direcciones de atención.Ofrece un plug 
+and play y la dirección del host puede ser configurada automáticamente. IPv4 no tiene incorporada la 
+función de autoconfiguración, por lo tanto no puede configurar obteniendo parámetros de las fuentes 
+externas tales como servidores DNS. IPv4 se basa en aumentaciones tales como 
+\textbf{IGMP}\footnote{Internet Group Management Protocol} e IPv6 tiene 
+\textbf{MLD}\footnote{Multicast Liner Discovery} que permite determinar cual de los puertos 
+contienen oyentes de multidifusion.
+IPv4 fragmenta paquetes para para poder transportar paquetes muy grandes, lo que satura la red, 
+IPv6 solo permite el nodo de origen para fragmentar un paquete. Proporciona una ruta de MTU 
+Discovery function que permite que la fuente del paquete fragmente los paquetes de forma eficiente. 
+Esto elimina la necesidad de los dispositivos de red para fragmentar aun mas un paquete a lo largo 
+de la transferencia.
+
 \section{Implementar IPv6}
 \subsection{Estado Actual}
 La adopción de IPv6 no se a dado tan rápidamente como sus diseñadores lo esperaban. Dado que el 
@@ -577,7 +676,7 @@ del 1\%, aproximadamente 0.238\% del trafico de los países\cite{googleIPv6}.\pa
 Ya adentrándonos en nuestra actual década mas precisamente Octubre 2011 la capacidad para dar un 
 servicio en IPv6 era sustancialmente mas alta llegando a un 85\% de los proveedores de internet del 
 nivel superior y el soporte global había llegado a un 12\% del total. El soporte de software también 
-se había masificado con los principales SO\footnote{Windows, Mac OSX, Linux} soportando IPv6. En ese 
+se había masificado con los principales SO soportando IPv6. En ese 
 mismo año para el mes de Junio y en el día 8 la \emph{Internet Society} organizo el \textbf{World 
 IPv6 Day}. La cual fue una prueba mundial de un día de duración donde la grandes empresas 
 desplegaron sus tecnologías IPv6, la prueba fue un éxito y vio aumentada el escaso trafico de la 
@@ -591,7 +690,7 @@ llegando al 8.85\% el mas alto del mundo, en latinoamerica Peru se encuentra en 
 1.1\%.
 \begin{figure}[h!]
  \centering
- \includegraphics[width=0.75\textwidth]{adopcionIPv6.png}
+ \includegraphics[width=0.79\textwidth]{adopcionIPv6.png}
  \caption[Adopción Global de IPv6]{Adopción Global de IPv6}
 \end{figure}
 
@@ -601,7 +700,7 @@ direcciones existentes se debe de buscar una solución, pero el problema radica 
 incompatibilidad de los protocolos, no se puede pasar a IPv6 y que este de servicio al estándar 
 anterior y realizar un paso gradual. Tampoco es factible apagar todos los servidores y clientes IPv4 
 y pasar a IPv6, asi que se debe de buscar una solución o soluciones de compromiso.\par
-Una solucion posible se encuentra disponible y se la llama dual-stack.
+Una solución posible se encuentra disponible y se la llama dual-stack.
 En este caso se necesita contar con suficiente cantidad de direcciones IPv4 para poder desplegar las 
 dos versiones del protocolo en simultáneo en toda la red. De esta forma, cuando se establece una 
 conexión hacia un destino sólo IPv4, se utilizará la conectividad IPv4 y si es hacia una dirección 
@@ -613,7 +712,7 @@ preferirá intentar conectar primero por IPv6 y en segunda instancia por IPv4.
  \caption[Dual Stack]{Dual Stack}
 \end{figure}\par
 Otra solución en existencia no tan deseable como la anterior, pero sin lugar a dudas efectiva es el 
-tunneling.
+tunneling (Figura ~\ref{fig:IPv6_Tunneling}).
 Es uno de los mecanismos mas antiguos para poder atravesar redes que no tienen soporte nativo del 
 protocolo que se está utilizando. En general se utilizan túneles encapsulando IPv6 dentro de IPv4, 
 permitiendo de esta forma atravesar redes que no manejan IPv6, pero también podemos encontrar la 
@@ -631,24 +730,59 @@ que se utiliza para encapsular el tráfico IPv6 por parte de carriers que tienen
  \centering
  \includegraphics[width=0.57\textwidth]{ipv6_tunnel.jpg}
  \caption[IPv6 Tunneling]{IPv6 Tunneling}
+ \label{fig:IPv6_Tunneling}
 \end{figure}\par
-Por ultimo analizaremos el método de traducción, esta técnica consiste en utilizar algún dispositivo 
-en la red que convierta los paquetes de IPv4 a IPv6 y viceversa. Ese dispositivo tiene que ser capaz 
-de realizar la traducción en los dos sentidos de forma de permitir la comunicación. Dentro de esta 
-clasificación podemos mencionar NAT64/DNS64: la red es IPv6 nativa y para llegar a sitios que son 
-sólo IPv4 se realiza una traducción al estilo NAT, mediante un mapeo entre los paquetes IPv6 e IPv4. 
-Se utiliza un prefijo especial para mapear direcciones IPv4 a IPv6: 64:ff9b::/96. Es necesario 
-también utilizar una modificación al DNS, llamada DNS64, que permite generar un registro AAAA aún 
-cuando el destino no tenga dirección IPv6 (es decir, el DNS responda sólo con registros de tipo A). 
-Vale la pena mencionar que una de las propuestas iniciales de mecanismos de traducción fue NAT-PT 
-(RFC 2766), que al dia de hoy ha sido desaconsejado debido a sus fallas (ver RFC 4966) y ha sido 
-reclasificado como ``histórico" por la IETF.
+Por ultimo analizaremos el método de traducción (Figura ~\ref{fig:IPv6_traduc}), esta técnica 
+consiste en utilizar algún dispositivo en la red que convierta los paquetes de IPv4 a IPv6 y 
+viceversa. Ese dispositivo tiene que ser capaz de realizar la traducción en los dos sentidos de 
+forma de permitir la comunicación. Dentro de esta clasificación podemos mencionar NAT64/DNS64: la 
+red es IPv6 nativa y para llegar a sitios que son sólo IPv4 se realiza una traducción al estilo NAT, 
+mediante un mapeo entre los paquetes IPv6 e IPv4. Se utiliza un prefijo especial para mapear 
+direcciones IPv4 a IPv6: 64:ff9b::/96. Es necesario también utilizar una modificación al DNS, 
+llamada DNS64, que permite generar un registro AAAA aún cuando el destino no tenga dirección IPv6 
+(es decir, el DNS responda sólo con registros de tipo A). Vale la pena mencionar que una de las 
+propuestas iniciales de mecanismos de traducción fue NAT-PT (RFC 2766), que al dia de hoy ha sido 
+desaconsejado debido a sus fallas (ver RFC 4966) y ha sido reclasificado como ``histórico" por la 
+IETF.
 
 \begin{figure}[h!]
  \centering
  \includegraphics[width=0.57\textwidth]{ipv6_translation.jpg}
  \caption[Traducción IPv6]{Traducción IPv6}
+ \label{fig:IPv6_traduc}
 \end{figure}
+
+\section{Conclusión}
+Como se puede apreciar aunque el peligro del agotamiento de direcciones es real y hasta en ciertos 
+lugares ya a sucedido, y la superioridad de IPv6 en otros aspectos no se a visto una gran 
+penetración en el mercado mundial. Lo cual a nuestro parecer se debe no solo a impedimentos técnicos 
+sino a la estructura muy descentralizada de internet. No existen órganos mundiales con capacidad de 
+guiar con mano de hierro la dirección de esta, solo se pueden presentar opciones y esta por consenso 
+los acepta o no. Así a sido toda su historia siempre evoluciono a los que necesitaba cuando lo 
+necesitaba y de la manera mas económica, no solo en lo monetaria sino en todos los recursos.\par
+Quizás se podría utilizar una analogía con un ser vivo o una especie que evoluciona de a poco de la 
+manera menos traumática posible, donde los cambios son dados por el ambiente siempre cambiante. 
+Quienes implementan de mejor manera los cambios tienen la capacidad de seguir mas en el mercado y 
+que perduren sus practicas o tecnologías, tal como lo hace la selección natural. De esta manera 
+siempre se busca que los cambios sean para mejor y nadie puede imponer su agenda o intereses. Esto
+ultimo se logra también por la gran cantidad de ``jugadores" presentes.\par
+Pero tal solución no viene sin sus riesgos la característica de ser descentralizada le lleva a pasar
+por estos problemas donde un cambio debe ser inmediato y global. Una situación que se torna muy 
+difícil, el estado actual dice que IPv4 funciona bien por ahora sus deficiencias pueden ser 
+mitigadas por otras tecnologías y el riesgo del cambio es bajo. Pero su mayor debilidad no puede ser 
+arreglada con parches o tecnologías extras, se debe cambiar de raíz, un cambio que cualquier 
+organismo aborrecería, por ser muy extremo y costoso.\par
+Igual el futuro no se presenta oscuro ni mucho menos y si lo que la historia nos demuestra es que el 
+negocio, definido por la totalidad de la internet, siempre adopta los cambios que le permiten crecer 
+mas. Aunque IPv6 avance mas lento de lo esperado, sus beneficios son muy grandes para ser dejados de 
+lado en pos de la seguridad de IPv4. A fin de cuentas los organismos que se mantienen estáticos que
+no evolucionan, se mueren. Internet aunque haya ocupado poco tiempo en nuestra historia se ha 
+vuelto muy importante quizás una de esas tecnologías que permitieron a nuestra especie dar un salto 
+cuántico, como la agricultura y la imprenta. IPv4 vivió mas tiempo del esperado y cumplió bien con 
+su cometido pero ya es tiempo para que sea jubilado, ya demuestra sus años en contra de IPv6 y 
+creemos firmemente que mercado, internet o como se lo quiera llamar lo dejara de lado de la mejor 
+manera posible y ofrecerá el mejor servicio posible y a su vez enfocara su esfuerzo en otros 
+inconvenientes por venir.
 
 \newpage
 \begin{thebibliography}{9}
