@@ -1,6 +1,6 @@
 \documentclass{beamer}
 \usetheme{CambridgeUS}
-\usecolortheme{dolphin} 
+%\usecolortheme{dolphin} 
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{graphicx}
@@ -39,9 +39,9 @@
 \frametitle{Que es IP? }
 \framesubtitle{Introduccion}
 \begin{enumerate}[$*$]
-	\item En 1986 la National Science foundation  financió la construccion de una red para la conexión de sus computadoras.La NSF permitió a particulares conectarse a  dicha red.
+	\item En 1986 la National Science foundation  financió la construcción de una red para la conexión de sus computadoras. La NSF permitió a particulares conectarse a  dicha red.
 	\item Estas redes existieron hasta 1993 cuando al año siguiente se puso un plan para reducir su influencia y aumentar la rentabilidad de los Internet Server Provider (ISP)
-	\item El gobierno obligo a los ciudadanos a usar el modelo OSI pero aún asi el modelo TCP/IP tuvo un gran crecimiento
+	\item El gobierno obligo a los ciudadanos a usar el modelo OSI pero aún así el modelo TCP/IP tuvo un gran crecimiento
 		
 \end{enumerate}
 \end{frame}
@@ -57,13 +57,13 @@
 \framesubtitle{EL Protocolo IP}
 
 
-	IP es un protocolo desarrollado por ARPANET para enrutar paquetes y comunicaciones de dispositivo a dispositivo de forma confiable.Vino de la mano de un paper presentado por Vinton Cerf y Robert Kahn.
+	IP es un protocolo desarrollado por ARPANET para enrutar paquetes y comunicaciones de dispositivo a dispositivo de forma confiable. Vino de la mano de un paper presentado por Vinton Cerf y Robert Kahn.
 \begin{enumerate}[$*$]
 
 	\item IP se encarga de enrutar los paquetes y comunicaciones de dispositivo a dispositivo
-	\item TCP garantiza confiabilidad  en la comunicacion de host a host
-	\item Trabaja en capas pero esas mismas operan en conjunto.Esto se logra encapsulando los datos y formando un 			datagrama propio
-	\item Promueve un servicio no orientado a la conexion no confiable y de mejor esfuerzo
+	\item TCP garantiza confiabilidad en la comunicación de host a host
+	\item Trabaja en capas pero esas mismas operan en conjunto. Esto se logra encapsulando los datos y formando un datagrama propio
+	\item Promueve un servicio no orientado a la conexión no confiable y de mejor esfuerzo
 	
 \end{enumerate}
 \end{frame}
@@ -71,15 +71,15 @@
 
 
 \begin{frame}
-\frametitle{El Estandar IPV4}
-\framesubtitle{Aspectos Tecnicos}
+\frametitle{El Estándar IPv4}
+\framesubtitle{Aspectos Técnicos}
 
 
 \begin{enumerate}[$*$]
 
-	\item El estándar IPv4 utiliza un direccionamiento de 32-bits  lo cual da una posibilidad de tan solo 
+	\item El estándar IPv4 utiliza un direccionamiento de 32 bits lo cual da una posibilidad de tan solo 
 		4.294.967.296 posibles direcciones
-	\item utiliza un sistema de 4 octetos expresados en decimal y separados por un punto.Identifican univocamenteun equipo conectado a la red
+	\item utiliza un sistema de 4 octetos expresados en decimal y separados por un punto. Identifican unívocamente equipo conectado a la red
 	\item se han dividió las direcciones en clases
 dando a una asignación llamada \textbf{direccionamiento con clases}
 	
@@ -124,8 +124,8 @@ dando a una asignación llamada \textbf{direccionamiento con clases}
 \begin{enumerate}[$*$]
 
 	\item Cupo limitado de direcciones asignables
-	\item Falta de garant\'ias de seguridad,confiabilidad,movilidad y autenticidad
-	\item Estos elementos podian incluirse mediante parches, pero a\'un as\'i no garantizaban el pleno desempeño de los mismos
+	\item Falta de garant\'ias de seguridad, confiabilidad, movilidad y autenticidad
+	\item Estos elementos podían incluirse mediante parches, pero a\'un as\'i no garantizaban el pleno desempeño de los mismos
 	\item Si bien IPv4 posee un sistema de "servicios diferenciados"\footnote[1]{Diffserv: servicio que analiza varios flujos de datos en vez de conexiones únicas o reservas de recursos } no se garantizaba una calidad de servicio necesaria para cubrir la demanda actual en el mercado
 \end{enumerate}
 
@@ -139,7 +139,7 @@ dando a una asignación llamada \textbf{direccionamiento con clases}
 \begin{frame}
 \frametitle{¿Qué es IPv6?}
 
-Es la version 6 del protocolo de internet.La evolucion del IPv4 y es un protocolo que soporta mas direcciones ($2^{128}$).\vspace{0.3cm}
+Es la version 6 del protocolo de internet. La evolución del IPv4 y es un protocolo que soporta mas direcciones ($2^{128}$).\vspace{0.3cm}
 \par Se solucionan problemas de direccionamiento y no son necesarias técnicas como el NAT\footnote{NAT (Network Address Translation - Traducción de Dirección de Red)}
 % es un mecanismo utilizado por routers IP para intercambiar paquetes entre dos redes que se asignan mutuamente direcciones incompatibles} para proporcionar conectividad a todos los ordenadores/dispositivos de nuestra red.
 \end{frame}
@@ -188,7 +188,7 @@ necesarios, se desarrollo las subredes y las mascaras de subred, pero aun así n
 
 
 IPv6 divide las direcciones en distintos ámbitos definidos o limites en los cuales se delegan las 
-direcciones.Cuenta con un agregado de un nivel superior TLA para la designacion de un gran bloque de direcciones y la detección de la ruta de origen.\par Luego le sigue el NLA que rompe una porción del TDA  y se lo designa al SLA que se encarga de identificar subredes.
+direcciones.Cuenta con un agregado de un nivel superior TLA para la designación de un gran bloque de direcciones y la detección de la ruta de origen.\par Luego le sigue el NLA que rompe una porción del TDA  y se lo designa al SLA que se encarga de identificar subredes.
 
 \end{frame}
 
@@ -211,7 +211,7 @@ seguridad de la red
 
 \begin{enumerate}[$*$]
 	
- \item Se puede decir que una red lan es un grupo de 
+ \item Se puede decir que una red LAN es un grupo de 
 maquinas y que cuando una nueva maquina ingresa a ese grupo, esta conectada y usan IPv6, se le 
 enviara a esa maquina nueva un paquete de multidifusión, este paquete se destinara a la dirección 
 de un ámbito local
@@ -237,10 +237,10 @@ asignado y cuales están libres en un tiempo dado.
 \begin{itemize}
 \item Se copia  el archivo a enviar tantas 
 veces como destinatarios existían y se los enviaba a cada uno.Esto resultaba inefectivo cuando se le mandaba el paquete a muchos usuarios en tiempo real.\par
-\item Ipv6 implementará multidifusion,que es tomar  un conjunto de datos y enviarlo por una dirección de multidifusión
-cuando se quiere enviar algo a multiples destinatarios , se asigna una direccion temporal de intervalo.\par
+\item Ipv6 implementará multidifusion, que es tomar  un conjunto de datos y enviarlo por una dirección de multidifusión
+cuando se quiere enviar algo a multiples destinatarios, se asigna una dirección temporal de intervalo.\par
 Esto ayuda a ahorrar ancho de banda y proporciona un envío eficaz.
-\item  \textbf{Dirección anycast:} Es una dirección que envia paquetes en una relación uno a uno, decide a que equipo va a enrutar primero el paquete decidiendo cual es el equipo mas cercano.
+\item  \textbf{Dirección anycast:} Es una dirección que envía paquetes en una relación uno a uno, decide a que equipo va a enrutar primero el paquete decidiendo cual es el equipo mas cercano.
  \end{itemize}
 \end{frame}
 
@@ -257,7 +257,7 @@ variable de tamaño opcional.
 \item \textbf{Salteo de fragmentación del Procedure} En IPv6 solo el host puede fragmentar el paquete. Para ayudar al 
 host, IPv6 incluye una función que encuentra la máxima unidad de transmisión(\textbf{MTU}) tamaño 
 del origen hacia la transmisión.
-\item \textbf{Cabeceras especiales} se agregaron las cabeceras de autenticacíon y la cabecera ESP
+\item \textbf{Cabeceras especiales} se agregaron las cabeceras de autenticación y la cabecera ESP
 
 \end {enumerate}
 \end{frame}
@@ -268,9 +268,9 @@ del origen hacia la transmisión.
 \frametitle{Los Beneficios de IPv6}
 \framesubtitle{Movilidad}
 \begin{enumerate}
-\item Las  IPv6 moviles son identificadas por una dirección hogareña.Cuando un host cambia de una subred a otra , se le asocia una direccion de atencion.
-\item El encuadernamiento es la asociación entre la direccion hogareña y la dirección de atencion.
-\item Cuando el dispositivo adquiere su dirección de atencion , se le notifica al agente hogareño el cambio de estado con un msj de actualización de encuadernamiento
+\item Las  IPv6 móviles son identificadas por una dirección hogareña.Cuando un host cambia de una subred a otra, se le asocia una dirección de atención.
+\item El encuadernamiento es la asociación entre la dirección hogareña y la dirección de atención.
+\item Cuando el dispositivo adquiere su dirección de atención , se le notifica al agente hogareño el cambio de estado con un msj de actualización de encuadernamiento
 \item Se mantiene un mapeo entre ambas direcciones (cache de encuadernamiento)  
  \item Se enviara un mensaje 
 de actualización al nodo de origen, se actualizará y enviará los paquetes subsiguientes directamente 
@@ -296,7 +296,7 @@ similar durante el proceso de configuración automática
 campo de alcance que puede restringir los paquetes de multidifusión para el nodo, el enlace o la 
 organización.
 \item Cabecera Simplificada IPv6 Posee un encabezado aerodinámico de ocho campos de longitud 
-fija. Estas cabeceras reducen la sobrecarga de la red.Ademas se elimina la existencia del checksum.
+fija. Estas cabeceras reducen la sobrecarga de la red. Además se elimina la existencia del checksum.
 
 \end{enumerate}
 \end{frame}
@@ -310,8 +310,8 @@ IPv6 cuenta con una dirección de 128 bits de longitud y comprendido por un pref
 interfaz de identificación, el identificador de interfaz deriva de la 
 dirección MAC. Durante la configuración de la red IPv6 el nodo host remplaza su propia ID de 
 interfaz por una ROM.
-\par Para entender IPv6 hay que tener en claro la funcion de TLA ID Y NLA ID que apuntan a un direccionamiento jerárquico.
-\par IPv4 en su lugar tiene unos bloques CIDR, cada uno compone de una o mas direcciones de clase C.El bloque CIDR no puede ser facilmente agregado y se requiere una entrada en la tabla de enrutamiento , separada de un router.
+\par Para entender IPv6 hay que tener en claro la función de TLA ID Y NLA ID que apuntan a un direccionamiento jerárquico.
+\par IPv4 en su lugar tiene unos bloques CIDR, cada uno compone de una o mas direcciones de clase C.El bloque CIDR no puede ser fácilmente agregado y se requiere una entrada en la tabla de enrutamiento , separada de un router.
 \end{frame}
 
 
@@ -341,25 +341,25 @@ Estas cabeceras tienen funciones especiales que mejoran el rendimiento de la dir
 \frametitle{Problemas en la Transición}
 No se puede hacer un cambio abrupto entre un protocolo a otro porque : 
 \begin{itemize}
-\item la penetración en el mercado es muy baja 
-\item incompatibilidad de los protocolos
+\item La penetración en el mercado es muy baja 
+\item Incompatibilidad de los protocolos
 \item  No es factible apagar todos los servidores IPv4 porque tampoco es prudente dejar a la gente sin servicio
 
 \end{itemize}
-Se penso en desplegar dos versiones del protocolo IPv4 en simultaneo para realizar paulatinamente la transición y a la vez  no quitarle la conexion a los usuarios.Esta solución se llama Dual stack.
-Aun asi no se cuenta con la cantidad suficiente de direcciones IP como para hacer eso.
+Se pensó en desplegar dos versiones del protocolo IPv4 en simultaneo para realizar paulatinamente la transición y a la vez  no quitarle la conexión a los usuarios.Esta solución se llama Dual stack.
+Aun así no se cuenta con la cantidad suficiente de direcciones IP como para hacer eso.
 \end{frame}
 
 %16
 \begin{frame}
 \frametitle{Mecanismos de Transición}
 \frametitle{Soluciones para la misma}
-No se puede hacer un cambio abrupto entre un protocolo a otro porque : 
+No se puede hacer un cambio abrupto entre un protocolo a otro porque: 
 \begin{itemize}
-\item Se penso en desplegar dos versiones del protocolo IPv4 en simultaneo para realizar paulatinamente la transición y a la vez  no quitarle la conexion a los usuarios.Esta solución se llama \textbf{Dual stack}.
+\item Se pensó en desplegar dos versiones del protocolo IPv4 en simultaneo para realizar paulatinamente la transición y a la vez no quitarle la conexión a los usuarios.Esta solución se llama \textbf{Dual stack}.
 
-\item \textbf{Tunneling}: utilización de tuneles encapsulando IPV6 dentro de IPv4, permitiendo de esta forma atravesar redes que no manejan IPv6.Existen dos tipos de tuneles, los manuales que  se configuran explicitamente y  los automáticos que se configuran automaticamente.
-\item  \textbf{Traducción}:consiste en utilizar algún dispositivo en la red que convierta los paquetes de IPv4 a IPv6 y 
+\item \textbf{Tunneling}: utilización de túneles encapsulando IPV6 dentro de IPv4, permitiendo de esta forma atravesar redes que no manejan IPv6. Existen dos tipos de túneles, los manuales que  se configuran explícitamente y  los automáticos que se configuran automáticamente.
+\item  \textbf{Traducción}: consiste en utilizar algún dispositivo en la red que convierta los paquetes de IPv4 a IPv6 y 
 viceversa. Ese dispositivo tiene que ser capaz de realizar la traducción en los dos sentidos de 
 forma de permitir la comunicación. 
 
@@ -369,13 +369,10 @@ forma de permitir la comunicación.
 
 %18
 \begin{frame}
-\frametitle{ Anexo : Algunas empresas latinoamericanas que utilizan IPv6}
-
-\includegraphics[height=1\textheight]{empresas_ipv6_la.png}
+\frametitle{ Anexo: Algunas empresas latinoamericanas que utilizan IPv6}
+\centering
+\includegraphics[height=.8\textheight]{empresas_ipv6_la.png}
 
 \end{frame}
-
-
-
 
 \end{document}
