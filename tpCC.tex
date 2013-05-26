@@ -193,6 +193,13 @@ del usuario.
 
 
 \section{Distintos Servicios de Cloud Computing}
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=0.79\textwidth]{SaStoIaS.png}
+\caption[Servicios de Cloud Computing]{Servicios de cloud computing}
+\end{figure}
+
 \subsection{SaaS -- Software as a Service}
 En el sistema tradicional un cliente compra o manda a hacer una aplicación y 
 este es dueño de una licencia, se le entrega físicamente el código fuente o
@@ -225,14 +232,14 @@ conjunto de parámetros de configuración que afectan el look and feel y cierta
 funcionalidad. De esta manera cada cliente puede tener su propia 
 configuración.
 
-\item \textbf{Accelerated feature delivery}
+\item \textbf{Actualizaciones rápidas: }
 Las aplicaciones Saas son actualizadas frecuentemente. Esto se logra por el 
 hecho de que la aplicación se encuentra hosteada en un solo lugar y la 
 actualización es decidía por el proveedor no los clientes.Esto se ve 
 acentuado por las metodologías agiles las cuales permiten lanzamientos en 
 menor tiempo. 
 
-\item \textbf{Uso de protocolos abiertos}
+\item \textbf{Uso de protocolos abiertos: }
 Dados que estos sistemas no acceden a las compañías y no necesariamente 
 interactúan con otros sistemas se aseguran de operar con estándares abiertos
 de esta manera se pueden interconectar con una mayor cantidad de clientes y 
@@ -289,10 +296,104 @@ afectadas hasta que dicho servicio se restablezca.
 
 \end{enumerate}
 
-\subsubsection{Ejemplo de prestadoras de servicio}
-
 \subsection{PaaS -- Platform as a service}
+Una vez que tenemos desarrolladas nuestras aplicaciones para la nube estas deben hacer uso de otras 
+plataformas, como servidores HTTP, servidores de aplicaciones, bases de datos, colas de mensaje, etc.
+Tradicionalmente nosotros debíamos de proveer también de dichas aplicaciones, pero con la llegada de
+la nube ahora tenemos proveedores de dichos servicios, los llamados PaaS (Platform as a service).\par
+PaaS incluye todas las facilidades al programador para prototipar, análizar, desarrollar, testear, 
+documentar y poner en marcha aplicaciones todo en un sólo proceso. Paas da servicio de integración de 
+la base de datos, seguridad, escalabilidad, almacenaje, copias de seguridad, versioning, y facilidad 
+para colaborar en la comunidad. Aquí si nuestra aplicaciones necesitas de mas recursos estos pueden 
+ser alocados por el proveedor de manera automática y se suele cobrar, por recursos utilizados u horas 
+de uso.\par 
+Algunas características:
+\begin{enumerate}
+
+\item \textbf{Facilidad de uso: }
+Las plataformas PaaS son comúnmente diseñadas alrededor de las preferencias de los desarrolladores 
+para maximizar la productividad.
+
+\item \textbf{Simplicidad: }
+PaaS permite enfocar los recursos en la adición de valor agregado removiendo las tareas no 
+diferenciadoras asociadas a los proyectos, como proveer y manejar los ambientes
+
+\item \textbf{Automatización: }
+Las plataformas PaaS realizan un uso muy intensivo de la automatización para eliminar las tareas 
+repetitivas que no agregan valor, para así dejar a los desarrolladores enfocarse en las tareas de 
+diferenciación del producto.
+
+\item \textbf{Arquitectura multi-usuario : }
+PaaS intenta soportar típicamente aplicaciones con muchos usuarios concurrentemente, proveyendo
+administradores de concurrencia, escalabilidad, fail-over y seguridad.
+
+\item \textbf{Integracion con web services y bases de datos: }
+El soporte a interfaces SOAP y REST permite crear composiciones de multiples servicios web, aveces 
+llamados ``mashups".
+
+\end{enumerate}
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=0.98\textwidth]{stackAto.png}
+\caption[Stack PaaS]{Stack PaaS}
+\end{figure}
+
 \subsection{IaaS -- Infrastructure as a service}
+Con la popularización de la virtualizacion, una técnica que nos permite poder correr sistemas 
+operativos completos como si fueran aplicaciones dentro de nuestra maquina real, se ha permito
+multiplicar y bajar los costos de los servidores. Ahora a partir de una sola maquina real se puede 
+tener muchas maquinas virtuales y a cada una asignarle una tarea. Dicha maquina virtual puede ser 
+clonada o transportada a otra maquina real. Actualmente existen muchas técnicas para lograrla, pero 
+todas nos permiten realizar lo mismo. Esto es muy importante porque se ha bajado mucho el precio de 
+los servidores dedicados lo cual nos lleva a la Infraestructura como servicio (IaaS).\par
+Entonces ahora se puede virtualizar y ofrecer todas las herramientas de la infraestructura, como
+almacenamiento, poder de computo, infraestructura de redes, etc como un servicio a terceros. Por 
+ejemplo en vez de comprar microprocesadores mas rápidos o mas módulos de memoria RAM, podemos 
+adquirir mas poder de procesamiento y solicitar mas memoria, la administración de esta y su 
+implementación no corre por nuestra cuenta, además de que los cambios suelen ser instantáneos. Esto 
+permite a las empresas no tener un área grande dedicada a la infraestructura, con sus consiguientes 
+gastos en mantenimiento y escalabilidad. Todo eso queda tercerizado en la empresa a quien contratemos 
+el servicio. Esto permite bajar los precios y especializar a las empresas en un solo rubro. Otra gran 
+ventaja que presenta dicho modelo es que solo se paga por lo q se utiliza, no hace falta tener discos 
+grandes o memoria de sobra, solo lo necesario para que los sistemas funcionen.\par
+Entre las ventajas de IaaS podemos encontrar:\\
+
+\begin{enumerate}
+
+\item \textbf{IaaS es flexible.} Si hoy necesita un pequeño servidor y el mes que viene uno grande. 
+Si descubre que el servidor que acaba de adquirir es pequeño para el software que va a instalar, 
+podrá hacer crecer o encoger su infraestructura según sus necesidades.
+
+\item \textbf{IaaS es rápido.} Desde que decida tener un nuevo servidor, hasta que lo tiene 
+disponible, el tiempo se cuenta en minutos.
+
+\item \textbf{IaaS no tiene coste oculto.} No hay electricidad, refrigeración, espacio ocupado, 
+control de accesos. Todos esos costes que deberíamos de sumar a la propiedad de infraestructura, 
+desaparecen. Simplemente tendrá un gasto mensual por el uso que haga de la infraestructura.
+
+\item \textbf{IaaS es fiable.} Más que tener los servidores en sus instalaciones. Las 
+infraestructuras se alojan en CPD’s de alto nivel, que cuentan con todas las medidas necesarias para 
+estar siempre operativos. Comunicaciones y energía redundante, sistemas anti-incendio, control de 
+accesos, etc. Niveles de disponibilidad de un 99,95 \%.
+
+\end{enumerate}
+
+Como ejemplo tomaremos a uno de los prestadores de servicio mas importante en el ambiente, Amazon y 
+su servicio Amazon Elastic Compute Cloud (EC2). Aquí se pueden solicitar instancias que son la unidad 
+en la que se vende el servicio, representarían a un servidor ``real". Las cuales existen en varias 
+tipos de combinaciones entre poder de computo, memoria RAM, disco rígido y capacidades de I/O de red.
+Estas se pueden adquirir con tarifas planas, por casos puntuales o en demanda y van desde pequeñas 
+instancias a grande, el sistema operativo también puede ser elegido habiendo distintos precios. 
+Dentro de dichas ``maquinas" uno puede correr las aplicaciones que desee y si estas necesitan en 
+ciertos casos mas recursos estos también se puede solicitar puntualmente.
+
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=1\textwidth]{159_madhu.png}
+\caption[Amazon EC2]{Amazon EC2}
+\end{figure}
+
 
 \section{Aplicaciones Practicas}
 
@@ -307,19 +408,22 @@ afectadas hasta que dicho servicio se restablezca.
 \bibitem{caractCC}		
 \emph{Caracteristicas de las aplicaciones. }
  21 Abr 2013\\
-\url{http://www.societic.com/2010/03/cloud-computing-caracteristicas-de-las-
-aplicaciones-en-cloud/}
+\url{http://www.societic.com/2010/03/cloud-computing-caracteristicas-de\\-las-aplicaciones-en-cloud/}
  
-\bibitem{wikiCC} 
-\emph{Computación en la nube. } 
+\bibitem{ieeeCC} 
+\emph{La nube es la computadora. } 
  21 Abr 2013\\
- \url{http://es.wikipedia.org/wiki/Computaci\%C3\%B3n_en_la_nube}
- 
-\bibitem{ver} 
- \emph{Free Pool of IPv4 Address Space Depleted.} 
- 19 Mar 2013\\
-	\url{https://www.nro.net/news/ipv4-free-pool-depleted}	
+ \url{http://spectrum.ieee.org/computing/hardware/the-cloud-is-the-computer}
 
+\bibitem{AEC2}
+\emph{Amazon EC2. }
+ 25 May 2013\\
+ \url{http://aws.amazon.com/es/ec2/} 
+
+\bibitem{paas}
+\emph{Enterprise Cloud Curves Ahead, PaaS Carefully. }
+ 26 May 2013\\
+ \url{http://www.cloudtweaks.com/2012/03/enterprise-cloud-curves-ahead-paas-carefully/}
 
 \end{thebibliography}
 
