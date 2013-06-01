@@ -394,12 +394,239 @@ ciertos casos mas recursos estos también se puede solicitar puntualmente.
 \caption[Amazon EC2]{Amazon EC2}
 \end{figure}
 
+\section{Seguridad en Cloud Computing}
+Cloud computing requiere un modelo de
+seguridad que reconcilie la escalabilidad y la tenencia
+múltiple con la necesidad de confianza. A medida que las
+empresas trasladan sus ambientes informáticos con las
+identidades, la información y la infraestructura a la nube,
+deben estar dispuestas a renunciar a cierto nivel de control.
+Para hacerlo, deben confiar en los sistemas y los
+proveedores de nubes, y verificar los procesos y los eventos
+de nubes. Entre los componentes básicos importantes de la
+confianza y de las relaciones de verificación, se incluyen el
+control de acceso, la seguridad de los datos, el
+cumplimiento de normas y la administración de eventos;
+todos ellos son elementos de seguridad bien comprendidos
+por los departamentos de TI actuales, implementados con
+productos y tecnologías existentes, y extensibles a la nube.
 
-\section{Aplicaciones Practicas}
+\subsection{Seguridad de la identidad}
+La administración de identidades end-to-end, los servicios
+de autenticación de otros fabricantes y la identidad federada
+se convertirán en un elemento clave de la seguridad de la
+nube. La seguridad de la identidad preserva la integridad y la
+confidencialidad de los datos y las aplicaciones, a la vez que
+ofrece acceso de disponibilidad inmediata a los usuarios
+adecuados. El soporte para estas capacidades de
+administración de identidades de usuarios y componentes
 
-\section{Cloud Computing para usuarios finales}
+de la infraestructura será un requerimiento importante para
+cloud computing, y la identidad deberá administrarse de
+manera que cree confianza. Se requerirá.
+\begin{itemize}
 
-\section{Conclusiones}
+\item Autenticación sólida: cloud computing debe ir más
+allá de la autenticación débil de nombres de usuario y
+contraseñas si pretende brindar soporte a la empresa.
+Esto significa adoptar técnicas y tecnologías que ya
+son estándar en el área de TI empresarial, como la
+autenticación sólida (autenticación de múltiples
+factores con tecnología de contraseña de un solo uso),
+la federación dentro de las empresas y entre estas, y la
+autenticación basada en riesgos que mide el historial de
+comportamiento, el contexto actual y otros factores que
+permiten evaluar el nivel de riesgo de la solicitud de un
+usuario. Niveles adicionales de autenticación serán
+fundamentales para cumplir con los acuerdos de nivel
+de servicio de seguridad; y el uso de un modelo de
+autenticación basado en riesgos que sea transparente
+en gran medida para los usuarios reducirá la necesidad
+de una federación más amplia de controles de acceso.
+
+\item Autorización más granular: la autorización puede
+ser general en una empresa o, incluso, en una nube
+privada. No obstante, para manejar datos delicados y
+requerimientos de cumplimiento de normas, las nubes
+públicas necesitarán capacidades de autorización
+granular (como controles basados en funciones e IRM)
+que puedan ser persistentes en toda la infraestructura
+de nube y el ciclo de vida de los datos.
+
+\end{itemize}
+
+\subsection{Seguridad de la información}
+En el data center tradicional, los controles sobre el acceso
+físico, el acceso a hardware y software, y los controles de
+identidad se combinan para la protección de los datos. En la
+nube, esa barrera de protección que garantiza la seguridad
+de la infraestructura se disipa. Para compensar, la seguridad
+deberá estar centrada en la información. Los datos necesitan
+que su propia seguridad se traslade con ellos y los proteja.
+Se requerirá.
+
+\begin{itemize}
+
+\item \textbf{Aislamiento de datos:} en situaciones de tenencia
+múltiple, será necesario mantener los datos de manera
+segura para protegerlos cuando varios clientes usen
+recursos compartidos. La virtualización, la encriptación
+y el control de acceso serán excelentes herramientas
+que permitirán distintos grados de separación entre
+las corporaciones, las comunidades de interés y los
+usuarios. En el futuro cercano, el aislamiento de datos
+será más importante y ejecutable para IAAS de lo que
+quizá será para PAAS y SAAS.
+
+\item \textbf{Seguridad de datos más granular:} a medida que
+la confidencialidad de la información aumenta, la
+granularidad de la implementación de la clasificación
+de los datos debe aumentar. En los ambientes de data
+center actuales, la granularidad del control de acceso
+basado en funciones a nivel de grupos de usuarios o
+unidades de negocios es aceptable en la mayoría de
+los casos porque la información permanece dentro del
+control de la empresa. Para la información en la nube,
+los datos delicados requerirán seguridad a nivel de
+archivos, campos o incluso bloques para satisfacer las
+demandas de seguridad y cumplimiento de normas.
+
+\item \textbf{Seguridad de datos coherente:} habrá una necesidad
+evidente de contar con protección de contenido basada
+en políticas para satisfacer las necesidades propias de la
+empresa y las directivas de políticas reglamentarias. Para
+algunas categorías de datos, la seguridad centrada en la
+información necesitará encriptación en transmisión y en
+reposo, además de administración en la nube y en todo
+el ciclo de vida de los datos.
+
+\item \textbf{Clasificación eficaz de datos:} cloud computing impone
+un intercambio de recursos entre el alto rendimiento
+y los requerimientos de mayor seguridad sólida. La
+clasificación de los datos es una herramienta fundamental
+para equilibrar esa ecuación. Las empresas necesitarán
+saber qué datos son importantes y dónde están ubicados
+como requerimiento previo para tomar decisiones
+relacionadas con el costo/beneficio del rendimiento,
+además de garantizar el enfoque en las áreas más
+críticas para los procedimientos de prevención de
+pérdida de datos.
+
+\item \textbf{Administración de derechos de información:} se suele
+tratar a IRM como un componente de identidad, una
+forma de establecer controles generales sobre qué
+usuarios tienen acceso a los datos. No obstante, la
+seguridad centrada en los datos más granular requiere
+que las políticas y los mecanismos de control sobre el
+almacenamiento y el uso de información estén asociados
+directamente con la información en sí.
+
+\item \textbf{Buen manejo y control y cumplimiento de normas:}
+un requerimiento clave del buen manejo y control y el
+cumplimiento de normas de la información corporativa
+es la creación de información de administración y
+validación; se realiza el monitoreo y la auditoría del
+estado de seguridad de la información con capacidades
+de registro. Aquí, no solo es importante documentar
+el acceso y la denegación de acceso a los datos,
+sino también garantizar que los sistemas de TI estén
+configurados para cumplir con las especificaciones de
+seguridad y no se hayan alterado. La expansión de las
+políticas de retención para el cumplimiento de normas
+y políticas de datos también se convertirá en una
+capacidad esencial de la nube. Básicamente, las
+infraestructuras de cloud computing deben tener la
+capacidad de verificar que se administren los datos
+según las reglamentaciones locales e internacionales
+correspondientes (como PCI y HIPAA) con controles
+adecuados, recopilación de logs y creación de informes.
+
+\subsection{Seguridad de la infraestructura}
+La infraestructura base para una nube debe ser
+inherentemente segura, ya sea una nube privada o pública,
+o un servicio SAAS, PAAS o IAAS. Se requerirá.
+\item \textbf{Seguridad inherente de componentes:} la nube debe
+estar diseñada para ser segura, creada con componentes
+inherentemente seguros, implementada y aprovisionada
+de manera segura con interfaces sólidas a otros
+componentes y, finalmente, soportada de manera
+segura con procesos de evaluación de vulnerabilidades
+y administración de cambios que producen información
+de administración y seguridades de nivel de servicio que
+crean confianza. Para estos componentes implementados
+de manera flexible, la identificación mediante la huella
+digital del dispositivo para garantizar la seguridad de la
+configuración y el estado también será un elemento de
+seguridad importante, al igual que lo es para los datos
+y las identidades en sí.
+\item \textbf{Seguridad de interfaz más granular:} los puntos en
+el sistema en los que se presentan intervenciones
+(usuario a red, servidor a aplicación) requieren políticas
+y controles de seguridad granulares que garanticen
+consistencia y responsabilidad. Aquí, el sistema end-toend debe ser patentado, un estándar de facto o una
+federación de proveedores que ofrezca políticas de
+seguridad implementadas de manera consistente.
+\item \textbf{Administración del ciclo de vida de los recursos:} el aspecto
+económico de cloud computing está basado en la tenencia
+múltiple y en el uso compartido de recursos. A medida que
+las necesidades y los requerimientos de un Cliente se
+modifican, un proveedor de servicios debe ofrecer y
+desactivar esos recursos (ancho de banda, servidores,
+almacenamiento y seguridad) según corresponda. Este
+proceso del ciclo de vida debe administrarse en relación
+con la responsabilidad para crear confianza.
+
+\end{itemize}
+
+\section{Diferencias entre un Datacenter y Cloud Computing}
+El datacenter tradicional actualmente es construido añadiendo mas poder de computo, mas almacenamiento
+y mayor networking. Si se observa mas detenidamente en como se adquieren y construyen estos recursos, se puede
+notar que estos componentes se compran individualmente y luego son puestos todos en conjunto. También se tiende
+a escalarlos de manera separada: se necesita mas espacio, se adquieren mas discos, se necesita mas 
+procesamiento, se compran mas serves, etc. Dicho proceso es lento y requiere de trabajo intensivo, pero así se 
+lo ha realizado siempre y no es muy tenido en cuenta actualmente.
+
+En un ambiente cloud adquirir recursos es diferente. Estos se adquieren en pods o contenedores de 
+procesamiento, red y almacenamiento el cual simplemente se adiciona a nuestro pool de recursos para acrecentar 
+sus capacidades. Los recursos físicos son adicionados y luego separados lógicamente por software. Se puede 
+apreciar como el acercamiento difiere especialmente cuando se considera que dichos pods son pre fabricados y 
+pre testeados, se los despliega luego se los conecta y por ultimo se orquesta la integración de los nuevos
+recursos. La aproximación de las tecnologías de la nube permiten que estas sean elásticas en el sentido que es
+muy fácil adicionar recursos e incrementar sus capacidades.
+
+Es también muy importante notar que los datacenters tradicionales son hechos principalmente para aplicaciones
+del tipo cliente servidor. Estas aplicaciones dependen de un solo sistema operativo 
+
+ These applications have a dependency on a single operating system, and this is opposite to how 
+cloud applications are built around service-oriented architectures. In order for us to have a true cloud 
+platform, we would have to rewrite these applications based on SOA standards, which is not going to happen for 
+the majority of our enterprise applications. As a result, the closest we can get to a cloud platform is to 
+automate and orchestrate our environment, develop a set of standards and processes which would allow us to 
+scale faster.
+
+Today, we still manually provision VMs. The problem is, organizations are having to deal with increasing number 
+of virtual machines. The fix is to hire more admins and while that is great for the economy, that just does not 
+scale, so we have to learn to build standards and automate and orchestrate in order to get away from manual, 
+repeated tasks.
+
+Another significant difference between an enterprise datacenter and an internal private cloud is that with a 
+traditional datacenter the business has complete reliance on IT for acquiring resources -- there is no self-
+service approach, no chargeback or showback model, no services approach. Basically, there is an IT “waiter” 
+that takes down the requirements, manually builds a VM to meet these requirements and hands it over to the 
+application owners.
+
+In an internal private cloud model, we have a self-service portal with predefined virtual machine offerings 
+that application owners can consume and will have to make their applications work within a predefined 
+framework.
+
+We can also take it one step further by creating the services concept. A service is a collection of VMs that 
+are managed as a single entity; VMware vSphere and Citrix XnServer call this concept vApps. In retrospect, when 
+you apply this to your cloud design, you end up offering a service that your users can consume or provision.
+
+Finally, when you build an internal private cloud your infrastructure is also very highly automated and 
+orchestrated. As a result, your traditional rack-stack-install-and-configure approach changes in exchange for 
+stateless servers that PXE boot and deploy the correct image depending on the IP address range they are 
+connecting from.
 
 \newpage
 
@@ -424,6 +651,11 @@ ciertos casos mas recursos estos también se puede solicitar puntualmente.
 \emph{Enterprise Cloud Curves Ahead, PaaS Carefully. }
  26 May 2013\\
  \url{http://www.cloudtweaks.com/2012/03/enterprise-cloud-curves-ahead-paas-carefully/}
+
+\bibitem{csa}
+\emph{Guía para la seguridad en áreas criticas de atención en Cloud Computing. }
+ Nov 2009\\
+ Cloud Security Alliance.
 
 \end{thebibliography}
 
