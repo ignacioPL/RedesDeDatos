@@ -455,6 +455,12 @@ de nube y el ciclo de vida de los datos.
 
 \end{itemize}
 
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=0.77\textwidth]{cloudsecurity1220.png}
+\caption[Seguridad en Cloud]{Seguridad en cloud computing}
+\end{figure}\par
+
 \subsection{Seguridad de la información}
 En el data center tradicional, los controles sobre el acceso
 físico, el acceso a hardware y software, y los controles de
@@ -579,54 +585,66 @@ con la responsabilidad para crear confianza.
 \end{itemize}
 
 \section{Diferencias entre un Datacenter y Cloud Computing}
-El datacenter tradicional actualmente es construido añadiendo mas poder de computo, mas almacenamiento
-y mayor networking. Si se observa mas detenidamente en como se adquieren y construyen estos recursos, se puede
-notar que estos componentes se compran individualmente y luego son puestos todos en conjunto. También se tiende
-a escalarlos de manera separada: se necesita mas espacio, se adquieren mas discos, se necesita mas 
-procesamiento, se compran mas serves, etc. Dicho proceso es lento y requiere de trabajo intensivo, pero así se 
-lo ha realizado siempre y no es muy tenido en cuenta actualmente.
+El datacenter tradicional actualmente es construido añadiendo mas poder de computo, mas 
+almacenamiento y mayor networking. Si se observa mas detenidamente en como se adquieren y construyen 
+estos recursos, se puede notar que estos componentes se compran individualmente y luego son puestos 
+todos en conjunto. También se tiende a escalarlos de manera separada: se necesita mas espacio, se 
+adquieren mas discos, se necesita mas procesamiento, se compran mas serves, etc. Dicho proceso es 
+lento y requiere de trabajo intensivo, pero así se lo ha realizado siempre y no es muy tenido en 
+cuenta actualmente.
 
 En un ambiente cloud adquirir recursos es diferente. Estos se adquieren en pods o contenedores de 
-procesamiento, red y almacenamiento el cual simplemente se adiciona a nuestro pool de recursos para acrecentar 
-sus capacidades. Los recursos físicos son adicionados y luego separados lógicamente por software. Se puede 
-apreciar como el acercamiento difiere especialmente cuando se considera que dichos pods son pre fabricados y 
-pre testeados, se los despliega luego se los conecta y por ultimo se orquesta la integración de los nuevos
-recursos. La aproximación de las tecnologías de la nube permiten que estas sean elásticas en el sentido que es
-muy fácil adicionar recursos e incrementar sus capacidades.
+procesamiento, red y almacenamiento el cual simplemente se adiciona a nuestro pool de recursos para 
+acrecentar sus capacidades. Los recursos físicos son adicionados y luego separados lógicamente por 
+software. Se puede apreciar como el acercamiento difiere especialmente cuando se considera que dichos 
+pods son pre-fabricados y pre-testeados, se los despliega luego se los conecta y por ultimo se 
+orquesta la integración de los nuevos recursos. La aproximación de las tecnologías de la nube 
+permiten que estas sean elásticas en el sentido que es muy fácil adicionar recursos e incrementar sus 
+capacidades.
 
-Es también muy importante notar que los datacenters tradicionales son hechos principalmente para aplicaciones
-del tipo cliente servidor. Estas aplicaciones dependen de un solo sistema operativo 
+\begin{figure}[h!]
+ \centering
+ \includegraphics[width=0.91\textwidth]{white_paper.jpg}
+\caption[Diferencia Entre Cloud y Datacenter]{Diferencias entre Cloud Computing y Datacenter}
+\end{figure}\par
 
- These applications have a dependency on a single operating system, and this is opposite to how 
-cloud applications are built around service-oriented architectures. In order for us to have a true cloud 
-platform, we would have to rewrite these applications based on SOA standards, which is not going to happen for 
-the majority of our enterprise applications. As a result, the closest we can get to a cloud platform is to 
-automate and orchestrate our environment, develop a set of standards and processes which would allow us to 
-scale faster.
+Es también muy importante notar que los datacenters tradicionales son hechos principalmente para 
+aplicaciones del tipo cliente servidor. Estas aplicaciones dependen de un solo sistema operativo y 
+esto se opone a las aplicaciones de la nube las cuales son construidas alrededor de una arquitectura
+orientada a los servicios. Por lo tanto para ser verdaderas plataformas en la nube se debería de 
+reescribir dichas aplicaciones, lo cual es imposible para la mayoría de ellas. Lo cual lleva a que
+lo mas cercano que podremos estar es automatizar y orquestar nuestro ambiente, desarrollar estándares
+y procesos que nos permitan escalar mas rápidamente.
 
-Today, we still manually provision VMs. The problem is, organizations are having to deal with increasing number 
-of virtual machines. The fix is to hire more admins and while that is great for the economy, that just does not 
-scale, so we have to learn to build standards and automate and orchestrate in order to get away from manual, 
-repeated tasks.
+Por ejemplo hoy en día todavía se administra manualmente a las VMs\footnote{Virtual Machines}. El 
+problemas radica en que las organizaciones deben lidiar con un mayor numero de maquinas virtuales.
+Para solucionar el problema se contratan mas cantidad de administradores, lo cual es bueno para la 
+economía, pero no permite escalar de la manera mas óptima posible, con lo cual se debe aprender a
+construir estándares, automatizar y orquestar con el fin de mantenerse lo mas alejado posible de
+las tareas manuales repetitivas, las cuales consumen muchos recursos humanos.
 
-Another significant difference between an enterprise datacenter and an internal private cloud is that with a 
-traditional datacenter the business has complete reliance on IT for acquiring resources -- there is no self-
-service approach, no chargeback or showback model, no services approach. Basically, there is an IT “waiter” 
-that takes down the requirements, manually builds a VM to meet these requirements and hands it over to the 
-application owners.
+Otra diferencia significativa entre cloud y datacenters es que uno de estos últimos el negocio 
+depende completamente en el departamento de IT para adquirir los recursos necesarios, lo cual es que
+no exista un acercamiento de auto-servicio o siquiera un acercamiento a algo orientado a los 
+servicios. Básicamente existe un ``mozo" de IT que toma los requerimientos, construye manualmente una
+VM que cumple con los susodichos requerimientos y luego se la entrega a los dueños de las 
+aplicaciones.
 
-In an internal private cloud model, we have a self-service portal with predefined virtual machine offerings 
-that application owners can consume and will have to make their applications work within a predefined 
-framework.
+En un modelo de nube, se tiene un portal de auto-servicio con maquina virtuales predefinidas 
+ofreciendo lo que los dueños de las aplicaciones pueden consumir y ellos deben construir las 
+aplicaciones para que se puedan desempeñar en los frameworks predefinidos. 
 
-We can also take it one step further by creating the services concept. A service is a collection of VMs that 
-are managed as a single entity; VMware vSphere and Citrix XnServer call this concept vApps. In retrospect, when 
-you apply this to your cloud design, you end up offering a service that your users can consume or provision.
+También se puede llevar un paso mas adelante al crear el concepto de servicios. En este caso el 
+servicio es una colección de VMs que son manejadas por una sola entidad; VMware vSphere y Citrix 
+XnServer llaman a este concepto vApps. Cuando esto se aplica al diseño cloud, se termina ofreciendo
+servicios que los usuarios pueden consumir o aprovisionarlos.
 
-Finally, when you build an internal private cloud your infrastructure is also very highly automated and 
-orchestrated. As a result, your traditional rack-stack-install-and-configure approach changes in exchange for 
-stateless servers that PXE boot and deploy the correct image depending on the IP address range they are 
-connecting from.
+Finalmente se podría decir que cuando se construye un cloud la infraestructura queda altamente 
+automatizada y orquestada. Como resultado la forma tradicional de acoplar mas racks e instalarlos 
+cambia a favor de servers sin cambio que despliegan la imagen correcta dependiendo de la dirección IP
+de la que se están conectando.
+
+\section{Conclusiones}
 
 \newpage
 
@@ -653,9 +671,15 @@ connecting from.
  \url{http://www.cloudtweaks.com/2012/03/enterprise-cloud-curves-ahead-paas-carefully/}
 
 \bibitem{csa}
-\emph{Guía para la seguridad en áreas criticas de atención en Cloud Computing. }
- Nov 2009\\
- Cloud Security Alliance.
+\emph{Guía para la seguridad en áreas criticas de atención en Cloud Computing. } Cloud Security 
+Alliance,
+ USA, Nov 2009.
+
+\bibitem{dataCCC}
+	Lori MacVittie	
+	\emph{Cloud Computing versus Cloud Data Centers.} DevCentral,
+	USA,
+	Sep 2009. 	
 
 \end{thebibliography}
 
